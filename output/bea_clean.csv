@@ -1,0 +1,343 @@
+industry_name,YEAR,value_added
+Accommodation and Food Services,2006,381000
+Accommodation and Food Services,2007,396200
+Accommodation and Food Services,2008,399600
+Accommodation and Food Services,2009,388500
+Accommodation and Food Services,2010,403800
+Accommodation and Food Services,2011,423200
+Accommodation and Food Services,2012,451000
+Accommodation and Food Services,2013,475900
+Accommodation and Food Services,2014,504500
+Accommodation and Food Services,2015,557500
+Accommodation and Food Services,2016,587900
+Accommodation and Food Services,2017,617400
+Accommodation and Food Services,2018,647400
+Accommodation and Food Services,2019,685000
+Accommodation and Food Services,2020,522600
+Accommodation and Food Services,2021,692500
+Accommodation and Food Services,2022,803700
+Accommodation and Food Services,2023,911800
+Administrative and Support and Waste Management Services,2006,399100
+Administrative and Support and Waste Management Services,2007,430800
+Administrative and Support and Waste Management Services,2008,438800
+Administrative and Support and Waste Management Services,2009,412300
+Administrative and Support and Waste Management Services,2010,438000
+Administrative and Support and Waste Management Services,2011,455000
+Administrative and Support and Waste Management Services,2012,474900
+Administrative and Support and Waste Management Services,2013,490100
+Administrative and Support and Waste Management Services,2014,518299.99999999994
+Administrative and Support and Waste Management Services,2015,540300
+Administrative and Support and Waste Management Services,2016,559200
+Administrative and Support and Waste Management Services,2017,602900
+Administrative and Support and Waste Management Services,2018,638700
+Administrative and Support and Waste Management Services,2019,670200
+Administrative and Support and Waste Management Services,2020,648900
+Administrative and Support and Waste Management Services,2021,739700
+Administrative and Support and Waste Management Services,2022,837700
+Administrative and Support and Waste Management Services,2023,886600
+"Agriculture, Forestry, Fishing, and Hunting",2006,127100
+"Agriculture, Forestry, Fishing, and Hunting",2007,146300
+"Agriculture, Forestry, Fishing, and Hunting",2008,146500
+"Agriculture, Forestry, Fishing, and Hunting",2009,129300.00000000001
+"Agriculture, Forestry, Fishing, and Hunting",2010,145700
+"Agriculture, Forestry, Fishing, and Hunting",2011,179900
+"Agriculture, Forestry, Fishing, and Hunting",2012,179500
+"Agriculture, Forestry, Fishing, and Hunting",2013,215800
+"Agriculture, Forestry, Fishing, and Hunting",2014,200600
+"Agriculture, Forestry, Fishing, and Hunting",2015,182100
+"Agriculture, Forestry, Fishing, and Hunting",2016,167500
+"Agriculture, Forestry, Fishing, and Hunting",2017,176800
+"Agriculture, Forestry, Fishing, and Hunting",2018,177100
+"Agriculture, Forestry, Fishing, and Hunting",2019,164200
+"Agriculture, Forestry, Fishing, and Hunting",2020,162900
+"Agriculture, Forestry, Fishing, and Hunting",2021,228600
+"Agriculture, Forestry, Fishing, and Hunting",2022,290000
+"Agriculture, Forestry, Fishing, and Hunting",2023,274200
+"Arts, Entertainment, and Recreation",2006,130400
+"Arts, Entertainment, and Recreation",2007,137400
+"Arts, Entertainment, and Recreation",2008,143200
+"Arts, Entertainment, and Recreation",2009,144500
+"Arts, Entertainment, and Recreation",2010,152400
+"Arts, Entertainment, and Recreation",2011,158700
+"Arts, Entertainment, and Recreation",2012,171800
+"Arts, Entertainment, and Recreation",2013,177200
+"Arts, Entertainment, and Recreation",2014,187900
+"Arts, Entertainment, and Recreation",2015,191400
+"Arts, Entertainment, and Recreation",2016,203900
+"Arts, Entertainment, and Recreation",2017,213800
+"Arts, Entertainment, and Recreation",2018,227200
+"Arts, Entertainment, and Recreation",2019,237100
+"Arts, Entertainment, and Recreation",2020,170900
+"Arts, Entertainment, and Recreation",2021,214200
+"Arts, Entertainment, and Recreation",2022,264200
+"Arts, Entertainment, and Recreation",2023,299700
+Construction,2006,697100
+Construction,2007,715700
+Construction,2008,649300
+Construction,2009,565400
+Construction,2010,525700
+Construction,2011,525600
+Construction,2012,554900
+Construction,2013,594700
+Construction,2014,649900
+Construction,2015,715300
+Construction,2016,776800
+Construction,2017,840200
+Construction,2018,889100
+Construction,2019,953000
+Construction,2020,957800
+Construction,2021,1011700
+Construction,2022,1114300
+Construction,2023,1220600
+Educational Services,2006,142900
+Educational Services,2007,151500
+Educational Services,2008,167800
+Educational Services,2009,188200
+Educational Services,2010,199000
+Educational Services,2011,206300
+Educational Services,2012,214200
+Educational Services,2013,217000
+Educational Services,2014,224800
+Educational Services,2015,231300
+Educational Services,2016,243200
+Educational Services,2017,245600
+Educational Services,2018,257200
+Educational Services,2019,270300
+Educational Services,2020,255500
+Educational Services,2021,270000
+Educational Services,2022,292000
+Educational Services,2023,312000
+Finance and Insurance,2006,1048300
+Finance and Insurance,2007,1029599.9999999999
+Finance and Insurance,2008,871300
+Finance and Insurance,2009,967000
+Finance and Insurance,2010,993200
+Finance and Insurance,2011,1022500
+Finance and Insurance,2012,1169400
+Finance and Insurance,2013,1153500
+Finance and Insurance,2014,1295700
+Finance and Insurance,2015,1390600
+Finance and Insurance,2016,1474900
+Finance and Insurance,2017,1508000
+Finance and Insurance,2018,1574800
+Finance and Insurance,2019,1652300
+Finance and Insurance,2020,1718200
+Finance and Insurance,2021,1859000
+Finance and Insurance,2022,1935600
+Finance and Insurance,2023,2015600
+Health Care and Social Assistance,2006,892400
+Health Care and Social Assistance,2007,936500
+Health Care and Social Assistance,2008,1017200
+Health Care and Social Assistance,2009,1078800
+Health Care and Social Assistance,2010,1112300
+Health Care and Social Assistance,2011,1149900
+Health Care and Social Assistance,2012,1195100
+Health Care and Social Assistance,2013,1233000
+Health Care and Social Assistance,2014,1270200
+Health Care and Social Assistance,2015,1343600
+Health Care and Social Assistance,2016,1413800
+Health Care and Social Assistance,2017,1471300
+Health Care and Social Assistance,2018,1534700
+Health Care and Social Assistance,2019,1613900
+Health Care and Social Assistance,2020,1614600
+Health Care and Social Assistance,2021,1734200
+Health Care and Social Assistance,2022,1859400
+Health Care and Social Assistance,2023,2038900
+Information,2006,651900
+Information,2007,707500
+Information,2008,743800
+Information,2009,721400
+Information,2010,754900
+Information,2011,763000
+Information,2012,762700
+Information,2013,835500
+Information,2014,848800
+Information,2015,913100
+Information,2016,974900
+Information,2017,1010000
+Information,2018,1041500
+Information,2019,1142600
+Information,2020,1181300
+Information,2021,1310400
+Information,2022,1367500
+Information,2023,1477900
+Management of Companies and Enterprises,2006,230400
+Management of Companies and Enterprises,2007,251100
+Management of Companies and Enterprises,2008,256399.99999999997
+Management of Companies and Enterprises,2009,245000
+Management of Companies and Enterprises,2010,265300
+Management of Companies and Enterprises,2011,277900
+Management of Companies and Enterprises,2012,302100
+Management of Companies and Enterprises,2013,319400
+Management of Companies and Enterprises,2014,332200
+Management of Companies and Enterprises,2015,347000
+Management of Companies and Enterprises,2016,349200
+Management of Companies and Enterprises,2017,370100
+Management of Companies and Enterprises,2018,388300
+Management of Companies and Enterprises,2019,405600
+Management of Companies and Enterprises,2020,403900
+Management of Companies and Enterprises,2021,442100
+Management of Companies and Enterprises,2022,482600
+Management of Companies and Enterprises,2023,503100
+Manufacturing,2006,1793500
+Manufacturing,2007,1845800
+Manufacturing,2008,1799600
+Manufacturing,2009,1695800
+Manufacturing,2010,1788300
+Manufacturing,2011,1863100
+Manufacturing,2012,1921300
+Manufacturing,2013,1970500
+Manufacturing,2014,2009700
+Manufacturing,2015,2071100
+Manufacturing,2016,2035200
+Manufacturing,2017,2109700
+Manufacturing,2018,2261800
+Manufacturing,2019,2268800
+Manufacturing,2020,2149500
+Manufacturing,2021,2408800
+Manufacturing,2022,2684500
+Manufacturing,2023,2840400
+"Mining, Quarrying, and Oil and Gas Extraction",2006,273100
+"Mining, Quarrying, and Oil and Gas Extraction",2007,314100
+"Mining, Quarrying, and Oil and Gas Extraction",2008,392500
+"Mining, Quarrying, and Oil and Gas Extraction",2009,275400
+"Mining, Quarrying, and Oil and Gas Extraction",2010,306400
+"Mining, Quarrying, and Oil and Gas Extraction",2011,357800
+"Mining, Quarrying, and Oil and Gas Extraction",2012,360500
+"Mining, Quarrying, and Oil and Gas Extraction",2013,388200
+"Mining, Quarrying, and Oil and Gas Extraction",2014,418100
+"Mining, Quarrying, and Oil and Gas Extraction",2015,262300
+"Mining, Quarrying, and Oil and Gas Extraction",2016,211800
+"Mining, Quarrying, and Oil and Gas Extraction",2017,267300
+"Mining, Quarrying, and Oil and Gas Extraction",2018,313500
+"Mining, Quarrying, and Oil and Gas Extraction",2019,294000
+"Mining, Quarrying, and Oil and Gas Extraction",2020,201900
+"Mining, Quarrying, and Oil and Gas Extraction",2021,331900
+"Mining, Quarrying, and Oil and Gas Extraction",2022,460600
+"Mining, Quarrying, and Oil and Gas Extraction",2023,411800
+"Other Services, Except Public Administration",2006,325000
+"Other Services, Except Public Administration",2007,330600
+"Other Services, Except Public Administration",2008,330300
+"Other Services, Except Public Administration",2009,326400
+"Other Services, Except Public Administration",2010,328200
+"Other Services, Except Public Administration",2011,333500
+"Other Services, Except Public Administration",2012,348600
+"Other Services, Except Public Administration",2013,360500
+"Other Services, Except Public Administration",2014,384700
+"Other Services, Except Public Administration",2015,403500
+"Other Services, Except Public Administration",2016,415900
+"Other Services, Except Public Administration",2017,433200
+"Other Services, Except Public Administration",2018,457700
+"Other Services, Except Public Administration",2019,477900
+"Other Services, Except Public Administration",2020,450600
+"Other Services, Except Public Administration",2021,484800
+"Other Services, Except Public Administration",2022,549300
+"Other Services, Except Public Administration",2023,589400
+"Professional, Scientific, and Technical Services",2006,917000
+"Professional, Scientific, and Technical Services",2007,985400
+"Professional, Scientific, and Technical Services",2008,1082800
+"Professional, Scientific, and Technical Services",2009,1030900.0000000001
+"Professional, Scientific, and Technical Services",2010,1065100
+"Professional, Scientific, and Technical Services",2011,1127200
+"Professional, Scientific, and Technical Services",2012,1191800
+"Professional, Scientific, and Technical Services",2013,1211700
+"Professional, Scientific, and Technical Services",2014,1269500
+"Professional, Scientific, and Technical Services",2015,1349700
+"Professional, Scientific, and Technical Services",2016,1396500
+"Professional, Scientific, and Technical Services",2017,1460600
+"Professional, Scientific, and Technical Services",2018,1562100
+"Professional, Scientific, and Technical Services",2019,1653100
+"Professional, Scientific, and Technical Services",2020,1673300
+"Professional, Scientific, and Technical Services",2021,1882400
+"Professional, Scientific, and Technical Services",2022,2060699.9999999998
+"Professional, Scientific, and Technical Services",2023,2222000
+Real Estate and Rental and Leasing,2006,1696900
+Real Estate and Rental and Leasing,2007,1836000
+Real Estate and Rental and Leasing,2008,1944900
+Real Estate and Rental and Leasing,2009,1936200
+Real Estate and Rental and Leasing,2010,1997200
+Real Estate and Rental and Leasing,2011,2058300.0000000002
+Real Estate and Rental and Leasing,2012,2119700
+Real Estate and Rental and Leasing,2013,2215200
+Real Estate and Rental and Leasing,2014,2274200
+Real Estate and Rental and Leasing,2015,2338000
+Real Estate and Rental and Leasing,2016,2419900
+Real Estate and Rental and Leasing,2017,2525000
+Real Estate and Rental and Leasing,2018,2683400
+Real Estate and Rental and Leasing,2019,2805900
+Real Estate and Rental and Leasing,2020,2910600
+Real Estate and Rental and Leasing,2021,3144700
+Real Estate and Rental and Leasing,2022,3481900
+Real Estate and Rental and Leasing,2023,3796000
+Retail Trade,2006,869800
+Retail Trade,2007,869400
+Retail Trade,2008,851400
+Retail Trade,2009,832300
+Retail Trade,2010,863500
+Retail Trade,2011,883600
+Retail Trade,2012,923400
+Retail Trade,2013,979700
+Retail Trade,2014,1018200
+Retail Trade,2015,1081200
+Retail Trade,2016,1133200
+Retail Trade,2017,1178900
+Retail Trade,2018,1223600
+Retail Trade,2019,1277600
+Retail Trade,2020,1333100
+Retail Trade,2021,1535200
+Retail Trade,2022,1628900
+Retail Trade,2023,1772400
+Transportation and Warehousing,2006,410300
+Transportation and Warehousing,2007,414000
+Transportation and Warehousing,2008,427000
+Transportation and Warehousing,2009,404400
+Transportation and Warehousing,2010,433500
+Transportation and Warehousing,2011,452500
+Transportation and Warehousing,2012,473300
+Transportation and Warehousing,2013,497400
+Transportation and Warehousing,2014,533600
+Transportation and Warehousing,2015,583900
+Transportation and Warehousing,2016,603000
+Transportation and Warehousing,2017,635500
+Transportation and Warehousing,2018,677300
+Transportation and Warehousing,2019,710000
+Transportation and Warehousing,2020,638700
+Transportation and Warehousing,2021,775400
+Transportation and Warehousing,2022,916300
+Transportation and Warehousing,2023,943700
+Utilities,2006,226700
+Utilities,2007,231900
+Utilities,2008,241700
+Utilities,2009,257800
+Utilities,2010,279100
+Utilities,2011,288300
+Utilities,2012,280700
+Utilities,2013,287600
+Utilities,2014,299300
+Utilities,2015,300500
+Utilities,2016,303400
+Utilities,2017,313700
+Utilities,2018,320400
+Utilities,2019,331600
+Utilities,2020,345700
+Utilities,2021,390800
+Utilities,2022,443600
+Utilities,2023,446500
+Wholesale Trade,2006,809500
+Wholesale Trade,2007,856200
+Wholesale Trade,2008,882800
+Wholesale Trade,2009,832100
+Wholesale Trade,2010,887600
+Wholesale Trade,2011,934800
+Wholesale Trade,2012,997800
+Wholesale Trade,2013,1042700
+Wholesale Trade,2014,1092100
+Wholesale Trade,2015,1148600
+Wholesale Trade,2016,1142900
+Wholesale Trade,2017,1176100
+Wholesale Trade,2018,1222100
+Wholesale Trade,2019,1296800
+Wholesale Trade,2020,1301800
+Wholesale Trade,2021,1415100
+Wholesale Trade,2022,1595500
+Wholesale Trade,2023,1653000

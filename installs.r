@@ -1,0 +1,18 @@
+# random.r
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+install.packages("readr")
+install.packages("dplyr")
+install.packages("gridExtra")
+install.packages("scales")
+install.packages("ggplot2")
+install.packages("tidyr")
+install.packages("knitr")
+install.packages("broom")
+install.packages("fixest")
+install.packages("modelsummary")
+install.packages("zoo")
+install.packages("kableExtra")
+install.packages("pagedown")
+install.packages("webshot2")
+install.packages("rmarkdown")
