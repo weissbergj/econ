@@ -1,0 +1,1851 @@
+analysis2.txt
+
+
+Quadratic Model:
+Positive linear term (15,390, p=0.026)
+Negative quadratic term (-20,620, p=0.086)
+Suggests diminishing returns to establishment size
+Cubic Model:
+All terms are insignificant
+Suggests the quadratic specification might be sufficient
+Threshold Effects:
+Low intensity has a negative effect (-640.75, p=0.043)
+High intensity effect is insignificant
+Suggests most of the action is at the bottom of the distribution
+
+
+Based on the output, there are several key findings from the DiD (Difference-in-Differences) analysis across different industries. Let me highlight the most significant results:
+Strong Positive Effects:
+Finance and Insurance showed consistently positive and significant effects post-2015:
+2017: +8,570 (p < 0.01)
+2018: +6,026 (p < 0.05)
+2019: +6,579 (p < 0.01)
+2020: +9,532 (p < 0.01)
+Negative Effects:
+Retail Trade showed negative effects:
+2019: -3,064 (p < 0.05)
+Other Services showed large negative effects:
+Post-2015: -21,790 (p < 0.01)
+COVID period: -31,370 (p < 0.01)
+
+Mechanism Analysis:
+# Skill Intensity shows strong effects
+const                                    1.062e+04     657.81     16.143     0.0000
+large_estab_intensity                   -4.029e+04     7278.2    -5.5363     0.0000
+large_estab_intensity_x_skill_intensity  3.368e+04     5296.9     6.3584     0.0000
+
+Placebo Tests:
+All placebo tests (2010-2013) showed insignificant results, supporting the validity of the research design:
+# Example: 2013 Placebo
+const                  1.053e+04     796.09     13.222     0.0000
+large_estab_intensity     367.21     4013.5     0.0915     0.9271
+size_x_post_2013          906.07     961.95     0.9419     0.3463
+
+
+
+Based on the Digital Transformation Analysis output, here are the key findings:
+Triple-Difference Results:
+const                       1.04e+04     780.59     13.318     0.0000
+large_estab_intensity         2429.9     4446.3     0.5465     0.5847
+size_x_digital_x_post2015     3019.7     1587.2     1.9025     0.0571  # Marginally significant
+digital_x_post2015            1062.0     419.78     2.5299     0.0114  # Significant
+Event Study Results show increasing effects over time:
+# Digital Industry Effects (Base Effects):
+t-2: -293.96 (p=0.4234)  # Pre-treatment
+t-1: 398.14 (p=0.2964)   # Pre-treatment
+t0: 715.62 (p=0.1202)    # Treatment year
+t1: 1068.77 (p=0.0342)   # Significant
+t2: 1687.29 (p=0.0021)   # Highly significant
+t3: 1164.49 (p=0.0909)   # Marginally significant
+Size Interaction Effects:
+# Most notable effect in t3:
+t3: 5358.3529 (p=0.0137)  # Significant positive interaction
+
+The results suggest that digital transformation had a stronger positive effect on wages in industries with higher establishment size intensity, with the effect growing stronger over time. Would you like me to elaborate on any specific aspect of these findings?
+
+
+While the analysis uses rigorous methods, we should be cautious about claiming pure causality. Here's why:
+Research Design Strengths:
+Uses difference-in-differences (DiD) and triple-difference designs
+Includes parallel trends tests
+Employs placebo tests
+Controls for time and entity fixed effects
+Potential Threats to Causality:
+Significant
+Selection Issues:
+Industries may self-select into digital transformation
+Large establishments might choose digitalization based on unobserved factors
+Cannot fully rule out reverse causality (higher wages enabling digital investment)
+Omitted Variables:
+Other concurrent policy changes
+Industry-specific trends
+Local economic conditions
+Labor market dynamics
+The analysis suggests a strong relationship between digitalization, establishment size, and wages, but we should interpret it as "suggestive evidence" rather than definitively causal. The pre-trends and potential selection issues make it difficult to claim pure causality.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+python3 analysis2.py
+
+=== Data Quality Checks ===
+
+Year range: 2007 to 2021
+
+Dataset Shape: (14414, 50)
+
+Columns: ['state_name', 'industry_name', 'broad_sector', 'YEAR', 'workers', 'median_wage', 'mean_wage', 'total_wage_bill', 'pct_change_employment', 'firms_01: Total', '
+firms_02: <5', 'firms_03: 5-9', 'firms_04: 10-19', 'firms_05: <20', 'firms_06: 20-99', 'firms_07: 100-499', 'firms_08: <500', 'firms_09: 500+', 'establishments_01: Total', 'establishments_02: <5', 'establishments_03: 5-9', 'establishments_04: 10-19', 'establishments_05: <20', 'establishments_06: 20-99', 'establishments_07: 100-499', 'establishments_08: <500', 'establishments_09: 500+', 'employment_01: Total', 'employment_02: <5', 'employment_03: 5-9', 'employment_04: 10-19', 'employment_05: <20', 'employment_06: 20-99', 'employment_07: 100-499', 'employment_08: <500', 'employment_09: 500+', 'annual_payroll_01: Total', 'annual_payroll_02: <5', 'annual_payroll_03: 5-9', 'annual_payroll_04: 10-19', 'annual_payroll_05: <20', 'annual_payroll_06: 20-99', 'annual_payroll_07: 100-499', 'annual_payroll_08: <500', 'annual_payroll_09: 500+', 'state_industry', 'large_estab_intensity', 'wage_relationship_flag', 'wage_inequality', 'wage_inequality_ratio']                                                     
+Missing Values:
+961
+
+Key Variables Summary:
+
+establishments_01: Total:
+count     14414.000000
+mean      39906.663313
+std       65292.194257
+min          17.000000
+25%        4745.250000
+50%       16592.000000
+75%       47028.750000
+max      703815.000000
+Name: establishments_01: Total, dtype: float64
+
+establishments_09: 500+:
+count     14414.000000
+mean       6560.995629
+std       13083.331271
+min           0.000000
+25%         617.000000
+50%        2200.000000
+75%        6850.000000
+max      158590.000000
+Name: establishments_09: 500+, dtype: float64
+
+median_wage:
+count     14414.000000
+mean      36769.120300
+std       18683.409854
+min          60.000000
+25%       22000.000000
+50%       35000.000000
+75%       46000.000000
+max      328000.000000
+Name: median_wage, dtype: float64
+
+mean_wage:
+count     14414.000000
+mean      47483.037738
+std       22339.252641
+min        3000.000000
+25%       30650.263049
+50%       44140.592048
+75%       59210.777141
+max      270222.222222
+Name: mean_wage, dtype: float64
+
+total_wage_bill:
+count    1.441400e+04
+mean     6.451474e+07
+std      1.214068e+08
+min      3.000000e+03
+25%      6.855532e+06
+50%      2.191207e+07
+75%      6.581513e+07
+max      2.014204e+09
+Name: total_wage_bill, dtype: float64
+
+Industries per State:
+state_name
+Alabama                 19
+Alaska                  19
+Arizona                 19
+Arkansas                19
+California              19
+Colorado                19
+Connecticut             19
+Delaware                19
+District of Columbia    17
+Florida                 19
+Georgia                 19
+Hawaii                  19
+Idaho                   19
+Illinois                19
+Indiana                 19
+Iowa                    19
+Kansas                  19
+Kentucky                19
+Louisiana               19
+Maine                   19
+Maryland                19
+Massachusetts           19
+Michigan                19
+Minnesota               19
+Mississippi             19
+Missouri                19
+Montana                 19
+Nebraska                19
+Nevada                  19
+New Hampshire           19
+New Jersey              19
+New Mexico              19
+New York                19
+North Carolina          19
+North Dakota            17
+Ohio                    19
+Oklahoma                19
+Oregon                  19
+Pennsylvania            19
+Rhode Island            19
+South Carolina          19
+South Dakota            18
+Tennessee               19
+Texas                   19
+Utah                    19
+Vermont                 19
+Virginia                19
+Washington              19
+West Virginia           19
+Wisconsin               19
+Wyoming                 18
+Name: industry_name, dtype: int64
+
+Years per State-Industry:
+YEAR
+10      3
+11      1
+12      1
+13      3
+14      3
+15    952
+Name: count, dtype: int64
+
+Suspicious Values Check:
+Negative wages: 0
+Zero total establishments: 0
+Mean < Median wage: 267
+
+Potential Outliers (large establishments):
+Number of outliers: 506
+
+=== 1. Establishment Size Effects ===
+
+a) Effect on Median Wages:
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:            median_wage   R-squared:                        0.0014
+Estimator:                   PanelOLS   R-squared (Between):              0.1459
+No. Observations:               14414   R-squared (Within):               0.0083
+Date:                Thu, Nov 14 2024   R-squared (Overall):              0.1199
+Time:                        22:00:57   Log-likelihood                -1.484e+05
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      18.660
+Entities:                         963   P-value                           0.0000
+Avg Obs:                       14.968   Distribution:                 F(1,13436)
+Min Obs:                      10.0000                                           
+Max Obs:                       15.000   F-statistic (robust):             6.3895
+                                        P-value                           0.0115
+Time periods:                      15   Distribution:                 F(1,13436)
+Avg Obs:                       960.93                                           
+Min Obs:                       958.00                                           
+Max Obs:                       963.00                                           
+                                                                                
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  3.391e+04     1131.1     29.979     0.0000   3.169e+04   3.613e+04
+large_estab_intensity  1.401e+04     5543.6     2.5277     0.0115      3146.6   2.488e+04
+=========================================================================================
+
+F-test for Poolability: 55.020
+P-value: 0.0000
+Distribution: F(976,13436)
+
+Included effects: Entity, Time
+
+b) Effect on Wage Inequality:
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:        wage_inequality   R-squared:                     2.551e-05
+Estimator:                   PanelOLS   R-squared (Between):              0.0234
+No. Observations:               14414   R-squared (Within):               0.0007
+Date:                Thu, Nov 14 2024   R-squared (Overall):              0.0132
+Time:                        22:00:57   Log-likelihood                -1.443e+05
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      0.3427
+Entities:                         963   P-value                           0.5583
+Avg Obs:                       14.968   Distribution:                 F(1,13436)
+Min Obs:                      10.0000                                           
+Max Obs:                       15.000   F-statistic (robust):             0.1357
+                                        P-value                           0.7126
+Time periods:                      15   Distribution:                 F(1,13436)
+Avg Obs:                       960.93                                           
+Min Obs:                       958.00                                           
+Max Obs:                       963.00                                           
+                                                                                
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.68     13.233     0.0000      8879.8   1.197e+04
+large_estab_intensity     1422.2     3860.4     0.3684     0.7126     -6144.8      8989.2
+=========================================================================================
+
+F-test for Poolability: 17.003
+P-value: 0.0000
+Distribution: F(976,13436)
+
+Included effects: Entity, Time
+
+=== 2. Industry Wage Premiums ===
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:            median_wage   R-squared:                        0.6968
+Estimator:                   PanelOLS   R-squared (Between):              0.8238
+No. Observations:               14414   R-squared (Within):               0.0097
+Date:                Thu, Nov 14 2024   R-squared (Overall):              0.6696
+Time:                        22:00:57   Log-likelihood                -1.533e+05
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      1739.5
+Entities:                         963   P-value                           0.0000
+Avg Obs:                       14.968   Distribution:                F(19,14380)
+Min Obs:                      10.0000                                           
+Max Obs:                       15.000   F-statistic (robust):             355.93
+                                        P-value                           0.0000
+Time periods:                      15   Distribution:                F(19,14380)
+Avg Obs:                       960.93                                           
+Min Obs:                       958.00                                           
+Max Obs:                       963.00                                           
+                                                                                
+                                                  Parameter Estimates                                                   
+========================================================================================================================
+                                                      Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------------------------------------------------
+const                                                 1.056e+04     957.20     11.035     0.0000      8686.4   1.244e+04
+ind_Administrative and Support Services                  9422.0     668.44     14.096     0.0000      8111.8   1.073e+04
+ind_Agriculture, Forestry, Fishing and Hunting           4671.7     1110.0     4.2086     0.0000      2495.9      6847.5
+ind_Arts, Entertainment, and Recreation                  5814.8     1009.2     5.7617     0.0000      3836.6      7793.0
+ind_Construction                                      2.384e+04     1145.7     20.811     0.0000    2.16e+04   2.609e+04
+ind_Educational Services                              2.479e+04     938.88     26.405     0.0000   2.295e+04   2.663e+04
+ind_Finance and Insurance                             3.137e+04     1851.9     16.939     0.0000   2.774e+04     3.5e+04
+ind_Health Care and Social Assistance                 1.967e+04     744.93     26.405     0.0000   1.821e+04   2.113e+04
+ind_Information                                       2.567e+04     2108.2     12.176     0.0000   2.154e+04    2.98e+04
+ind_Management of Companies and Enterprises           4.239e+04     2574.9     16.464     0.0000   3.735e+04   4.744e+04
+ind_Manufacturing                                     3.163e+04     1288.4     24.554     0.0000   2.911e+04   3.416e+04
+ind_Mining, Quarrying, and Oil and Gas Extraction     4.384e+04     1670.0     26.253     0.0000   4.057e+04   4.712e+04
+ind_Other Services (except Public Administration)        8844.4     1127.3     7.8460     0.0000      6634.9   1.105e+04
+ind_Professional, Scientific, and Technical Services  3.921e+04     1626.0     24.118     0.0000   3.603e+04    4.24e+04
+ind_Real Estate and Rental and Leasing                1.965e+04     1078.4     18.225     0.0000   1.754e+04   2.177e+04
+ind_Retail Trade                                         5771.4     854.52     6.7539     0.0000      4096.4      7446.4
+ind_Transportation and Warehousing                    2.555e+04     633.31     40.338     0.0000   2.431e+04   2.679e+04
+ind_Utilities                                         4.347e+04     2299.3     18.906     0.0000   3.896e+04   4.798e+04
+ind_Wholesale Trade                                   2.834e+04     805.13     35.193     0.0000   2.676e+04   2.991e+04
+large_estab_intensity                                 1.683e+04     4890.0     3.4417     0.0006      7244.8   2.642e+04
+========================================================================================================================
+
+F-test for Poolability: 139.52
+P-value: 0.0000
+Distribution: F(14,14380)
+
+Included effects: Time
+
+=== 3. Size-Industry Interactions ===
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:        wage_inequality   R-squared:                        0.0011
+Estimator:                   PanelOLS   R-squared (Between):              0.1028
+No. Observations:               14414   R-squared (Within):               0.0019
+Date:                Thu, Nov 14 2024   R-squared (Overall):              0.0569
+Time:                        22:00:57   Log-likelihood                -1.443e+05
+Cov. Estimator:             Clustered                                           
+                                        F-statistic:                      3.7211
+Entities:                         963   P-value                           0.0050
+Avg Obs:                       14.968   Distribution:                 F(4,13433)
+Min Obs:                      10.0000                                           
+Max Obs:                       15.000   F-statistic (robust):             8.2859
+                                        P-value                           0.0000
+Time periods:                      15   Distribution:                 F(4,13433)
+Avg Obs:                       960.93                                           
+Min Obs:                       958.00                                           
+Max Obs:                       963.00                                           
+                                                                                
+                                      Parameter Estimates                                       
+================================================================================================
+                              Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+------------------------------------------------------------------------------------------------
+const                         1.015e+04     746.27     13.597     0.0000      8683.9   1.161e+04
+size_x_Manufacturing            -8665.8  1.462e+04    -0.5926     0.5534  -3.733e+04       2e+04
+size_x_Finance and Insurance  4.029e+04  1.254e+04     3.2131     0.0013   1.571e+04   6.486e+04
+size_x_Retail Trade          -2.193e+04     5954.6    -3.6823     0.0002   -3.36e+04  -1.025e+04
+large_estab_intensity            788.70     4095.8     0.1926     0.8473     -7239.6      8817.0
+================================================================================================
+
+F-test for Poolability: 14.643
+P-value: 0.0000
+Distribution: F(976,13433)
+
+Included effects: Entity, Time
+
+=== Post-2015 Industry Analysis ===
+                                                      Parameter Estimates                                                      
+===============================================================================================================================
+                                                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-------------------------------------------------------------------------------------------------------------------------------
+const                                                           9008.2     261.93     34.391     0.0000      8494.8      9521.6
+workers                                                         1.1296     0.1914     5.9001     0.0000      0.7543      1.5048
+post2015_x_Information                                          1664.3     538.69     3.0896     0.0020      608.41      2720.2
+post2015_x_Professional, Scientific, and Technical Services     350.20     274.83     1.2742     0.2026     -188.51      888.90
+post2015_x_Finance and Insurance                                3563.4     349.27     10.202     0.0000      2878.8      4248.1
+post2015_x_Retail Trade                                        -145.11     230.61    -0.6292     0.5292     -597.13      306.92
+post2015_x_Transportation and Warehousing                       1059.1     247.73     4.2751     0.0000      573.48      1544.6
+===============================================================================================================================
+
+=== COVID Period Analysis ===
+
+Effect of establishment size on wage inequality during COVID:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.038e+04     777.19     13.361     0.0000      8860.8   1.191e+04
+large_estab_intensity     1743.8     3787.9     0.4604     0.6453     -5681.0      9168.5
+size_x_covid             -940.61     1287.4    -0.7306     0.4650     -3464.1      1582.9
+=========================================================================================
+
+Total effect during COVID period:
+Coefficient: 803.1748
+Standard Error: 4000.6643
+T-statistic: 0.2008
+P-value: 0.8409
+
+Debugging Regional Analysis:
+Available regions: ['South' 'West' 'Northeast' 'Midwest']
+
+Processing region: South
+Number of state-industries in region: 321
+Number of observations in region: 4810
+Successfully estimated model for South
+
+Processing region: West
+Number of state-industries in region: 246
+Number of observations in region: 3681
+Successfully estimated model for West
+
+Processing region: Northeast
+Number of state-industries in region: 171
+Number of observations in region: 2555
+Successfully estimated model for Northeast
+
+Processing region: Midwest
+Number of state-industries in region: 225
+Number of observations in region: 3368
+Successfully estimated model for Midwest
+
+Total regions processed: 4
+
+=== Tests of Regional Differences ===
+
+Midwest vs Northeast:
+Difference in coefficients: -13412.7917
+Z-statistic: -1.4276
+P-value: 0.1534
+Significant at 5% level: No
+
+Midwest vs West:
+Difference in coefficients: -536.6921
+Z-statistic: -0.0454
+P-value: 0.9638
+Significant at 5% level: No
+
+Midwest vs South:
+Difference in coefficients: 5555.2597
+Z-statistic: 0.6063
+P-value: 0.5443
+Significant at 5% level: No
+
+Northeast vs West:
+Difference in coefficients: 12876.0996
+Z-statistic: 1.0416
+P-value: 0.2976
+Significant at 5% level: No
+
+Northeast vs South:
+Difference in coefficients: 18968.0514
+Z-statistic: 1.9236
+P-value: 0.0544
+Significant at 5% level: No
+
+West vs South:
+Difference in coefficients: 6091.9518
+Z-statistic: 0.4999
+P-value: 0.6171
+Significant at 5% level: No
+
+=== Extended Analysis Results ===
+
+1. Base Model:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.68     13.233     0.0000      8879.8   1.197e+04
+large_estab_intensity     1422.2     3860.4     0.3684     0.7126     -6144.8      8989.2
+=========================================================================================
+
+2. Time Effects:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                     9252.4     746.72     12.391     0.0000      7788.7   1.072e+04
+large_estab_intensity     3731.1     3758.7     0.9927     0.3209     -3636.4    1.11e+04
+size_post2015             7186.4     625.90     11.482     0.0000      5959.5      8413.2
+=========================================================================================
+
+3. Non-linear Effects:
+                                       Parameter Estimates                                       
+=================================================================================================
+                               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-------------------------------------------------------------------------------------------------
+const                             9099.3     754.24     12.064     0.0000      7620.9   1.058e+04
+large_estab_intensity          1.539e+04     6914.3     2.2258     0.0260      1837.0   2.894e+04
+large_estab_intensity_squared -2.062e+04    1.2e+04    -1.7179     0.0858  -4.414e+04      2906.7
+=================================================================================================
+
+4. Regional Analysis:
+
+Region: South
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.234e+04     1570.1     7.8602     0.0000      9262.8   1.542e+04
+large_estab_intensity    -4279.7     6816.0    -0.6279     0.5301  -1.764e+04      9083.0
+=========================================================================================
+
+Region: West
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                     9844.1     1834.7     5.3656     0.0000      6247.0   1.344e+04
+large_estab_intensity     1812.3   1.01e+04     0.1794     0.8576  -1.799e+04   2.162e+04
+=========================================================================================
+
+Region: Northeast
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                     9525.2     1355.8     7.0254     0.0000      6866.4   1.218e+04
+large_estab_intensity  1.469e+04     7125.6     2.0614     0.0394      715.36   2.866e+04
+=========================================================================================
+
+Region: Midwest
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                     8913.8     1233.3     7.2275     0.0000      6495.6   1.133e+04
+large_estab_intensity     1275.6     6123.2     0.2083     0.8350  -1.073e+04   1.328e+04
+=========================================================================================
+
+5. Alternative Measure:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                    -0.0032     0.3299    -0.0096     0.9923     -0.6498      0.6435
+large_estab_intensity     1.9956     1.6169     1.2342     0.2171     -1.1737      5.1649
+=========================================================================================
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:646: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  regional_stats = regional_stats.applymap(lambda x: format_number(x) if isinstance(x, (int, float)) and not isinstance(x, str) else x)
+None
+
+=== Running Non-linear Analysis ===
+
+=== Running Non-linear Analysis ===
+
+1. Quadratic and Cubic Specification Results:
+
+2. Log Specification Results:
+                                  Parameter Estimates                                  
+=======================================================================================
+                     Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------------
+const                 1.21e+04     365.09     33.136     0.0000   1.138e+04   1.281e+04
+log_estab_intensity     660.17     174.21     3.7895     0.0002      318.70      1001.7
+=======================================================================================
+
+3. Threshold Effects:
+                               Parameter Estimates                                
+==================================================================================
+                Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+----------------------------------------------------------------------------------
+const           1.094e+04     167.72     65.254     0.0000   1.062e+04   1.127e+04
+high_intensity    -281.14     592.91    -0.4742     0.6354     -1443.3      881.03
+low_intensity     -640.75     315.94    -2.0281     0.0426     -1260.0     -21.468
+==================================================================================
+
+=== Non-linear Analysis Results ===
+
+1. Quadratic Model Results:
+                                       Parameter Estimates                                       
+=================================================================================================
+                               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-------------------------------------------------------------------------------------------------
+const                             9099.3     754.24     12.064     0.0000      7620.9   1.058e+04
+large_estab_intensity          1.539e+04     6914.3     2.2258     0.0260      1837.0   2.894e+04
+large_estab_intensity_squared -2.062e+04    1.2e+04    -1.7179     0.0858  -4.414e+04      2906.7
+=================================================================================================
+
+2. Cubic Model Results:
+                                       Parameter Estimates                                       
+=================================================================================================
+                               Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-------------------------------------------------------------------------------------------------
+const                             9432.1     978.90     9.6353     0.0000      7513.3   1.135e+04
+large_estab_intensity             7414.6   2.06e+04     0.3600     0.7189  -3.296e+04   4.779e+04
+large_estab_intensity_squared     9540.2   8.46e+04     0.1128     0.9102  -1.563e+05   1.754e+05
+large_estab_intensity_cubed   -2.657e+04  8.112e+04    -0.3275     0.7433  -1.856e+05   1.324e+05
+=================================================================================================
+
+3. Threshold Effects:
+                               Parameter Estimates                                
+==================================================================================
+                Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+----------------------------------------------------------------------------------
+const           1.094e+04     167.72     65.254     0.0000   1.062e+04   1.127e+04
+high_intensity    -281.14     592.91    -0.4742     0.6354     -1443.3      881.03
+low_intensity     -640.75     315.94    -2.0281     0.0426     -1260.0     -21.468
+==================================================================================
+
+
+Suspicious Values Check:
+Negative wages: 0
+Zero total establishments: 0
+Mean < Median wage: 267
+
+Potential Outliers (large establishments):
+Number of outliers: 506
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:646: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  regional_stats = regional_stats.applymap(lambda x: format_number(x) if isinstance(x, (int, float)) and not isinstance(x, str) else x)
+
+=== DiD Analysis for Accommodation and Food Services ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Accommodation and Food Services_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Accommodation and Food Services_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.048e+04     789.76     13.269     0.0000      8931.1   1.203e+04
+large_estab_intensity     1301.3     3869.0     0.3363     0.7366     -6282.5      8885.1
+size_x_ind_post2015      -7223.9     799.35    -9.0371     0.0000     -8790.7     -5657.0
+size_x_ind_covid          283.04     1670.4     0.1694     0.8655     -2991.2      3557.3
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.70     13.230     0.0000      8877.4   1.197e+04
+large_estab_intensity     1400.3     3861.3     0.3626     0.7169     -6168.4      8968.9
+size_x_ind_2010           6893.6     1355.5     5.0856     0.0000      4236.6      9550.5
+size_x_ind_2011           2683.4     1294.0     2.0737     0.0381      146.95      5219.8
+size_x_ind_2012           2615.1     1450.9     1.8024     0.0715     -228.86      5459.1
+size_x_ind_2013          -819.94     1406.3    -0.5830     0.5599     -3576.5      1936.6
+size_x_ind_2014           144.68     1466.8     0.0986     0.9214     -2730.5      3019.9
+=========================================================================================
+
+=== DiD Analysis for Administrative and Support Services ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Administrative and Support Services_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Administrative and Support Services_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.037e+04     789.21     13.142     0.0000      8825.2   1.192e+04
+large_estab_intensity     1755.9     3873.8     0.4533     0.6504     -5837.3      9349.1
+size_x_ind_post2015      -2847.0     1815.6    -1.5681     0.1169     -6405.8      711.86
+size_x_ind_covid         -4790.7     3173.5    -1.5096     0.1312  -1.101e+04      1429.8
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.039e+04     788.25     13.182     0.0000      8846.0   1.194e+04
+large_estab_intensity     1544.7     3862.6     0.3999     0.6892     -6026.5      9116.0
+size_x_ind_2010           6988.4     3653.4     1.9128     0.0558     -172.81   1.415e+04
+size_x_ind_2011           4456.6     2508.8     1.7764     0.0757     -460.97      9374.3
+size_x_ind_2012           4966.7     1968.9     2.5225     0.0117      1107.3      8826.0
+size_x_ind_2013          -314.33     2532.1    -0.1241     0.9012     -5277.5      4648.9
+size_x_ind_2014          -475.50     3209.9    -0.1481     0.8822     -6767.3      5816.3
+=========================================================================================
+
+=== DiD Analysis for Agriculture, Forestry, Fishing and Hunting ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Agriculture, Forestry, Fishing and Hunting_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Agriculture, Forestry, Fishing and Hunting_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.048e+04     789.68     13.273     0.0000      8933.2   1.203e+04
+large_estab_intensity     1237.6     3868.6     0.3199     0.7490     -6345.4      8820.6
+size_x_ind_post2015   -4.613e+04  1.018e+04    -4.5302     0.0000  -6.608e+04  -2.617e+04
+size_x_ind_covid      -3.332e+04  1.754e+04    -1.8997     0.0575   -6.77e+04      1060.5
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.044e+04     788.97     13.237     0.0000      8896.7   1.199e+04
+large_estab_intensity     1281.9     3868.7     0.3314     0.7404     -6301.2      8865.1
+size_x_ind_2010        3.264e+04  1.312e+04     2.4874     0.0129      6918.3   5.835e+04
+size_x_ind_2011        2.759e+04  1.293e+04     2.1336     0.0329      2242.9   5.293e+04
+size_x_ind_2012        4.059e+04  1.313e+04     3.0916     0.0020   1.485e+04   6.632e+04
+size_x_ind_2013        3.143e+04  1.371e+04     2.2922     0.0219      4553.0   5.831e+04
+size_x_ind_2014           8206.8  1.286e+04     0.6383     0.5233  -1.699e+04   3.341e+04
+=========================================================================================
+
+=== DiD Analysis for Arts, Entertainment, and Recreation ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Arts, Entertainment, and Recreation_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Arts, Entertainment, and Recreation_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.81     13.221     0.0000      8871.4   1.196e+04
+large_estab_intensity     1408.3     3860.8     0.3648     0.7153     -6159.3      8976.0
+size_x_ind_post2015       1927.3     3847.0     0.5010     0.6164     -5613.3      9468.0
+size_x_ind_covid       2.112e+04     7574.4     2.7882     0.0053      6272.1   3.597e+04
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.043e+04     787.74     13.247     0.0000      8890.8   1.198e+04
+large_estab_intensity     1407.6     3862.1     0.3645     0.7155     -6162.7      8978.0
+size_x_ind_2010           327.34     4275.5     0.0766     0.9390     -8053.3      8708.0
+size_x_ind_2011        -1.23e+04     5699.9    -2.1582     0.0309  -2.347e+04     -1128.7
+size_x_ind_2012          -4969.5     6395.7    -0.7770     0.4372  -1.751e+04      7567.0
+size_x_ind_2013       -1.544e+04     7381.8    -2.0918     0.0365  -2.991e+04     -971.56
+size_x_ind_2014       -1.223e+04     5315.5    -2.3017     0.0214  -2.265e+04     -1815.6
+=========================================================================================
+
+=== DiD Analysis for Construction ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Construction_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Construction_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.046e+04     790.95     13.230     0.0000      8914.1   1.201e+04
+large_estab_intensity     1286.2     3872.6     0.3321     0.7398     -6304.7      8877.0
+size_x_ind_post2015   -3.613e+04  1.758e+04    -2.0546     0.0399  -7.059e+04     -1661.5
+size_x_ind_covid          534.83    1.6e+04     0.0334     0.9733  -3.082e+04   3.189e+04
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.043e+04     787.90     13.240     0.0000      8887.1   1.198e+04
+large_estab_intensity     1385.1     3863.0     0.3586     0.7199     -6186.9      8957.2
+size_x_ind_2010        3.336e+04  3.341e+04     0.9986     0.3180  -3.213e+04   9.886e+04
+size_x_ind_2011       -1.733e+04  2.226e+04    -0.7787     0.4362  -6.097e+04    2.63e+04
+size_x_ind_2012        3.002e+04   2.62e+04     1.1455     0.2520  -2.135e+04   8.138e+04
+size_x_ind_2013       -3.962e+04  2.726e+04    -1.4537     0.1461  -9.305e+04    1.38e+04
+size_x_ind_2014       -1.032e+04  2.057e+04    -0.5017     0.6159  -5.064e+04       3e+04
+=========================================================================================
+
+=== DiD Analysis for Educational Services ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Educational Services_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Educational Services_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.064e+04     801.37     13.278     0.0000      9070.0   1.221e+04
+large_estab_intensity     530.41     3919.3     0.1353     0.8924     -7152.0      8212.8
+size_x_ind_post2015   -1.627e+04     2493.3    -6.5255     0.0000  -2.116e+04  -1.138e+04
+size_x_ind_covid       -1.61e+04     3718.7    -4.3299     0.0000  -2.339e+04     -8812.5
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                   1.05e+04     794.42     13.214     0.0000      8940.2   1.205e+04
+large_estab_intensity     980.29     3899.0     0.2514     0.8015     -6662.2      8622.8
+size_x_ind_2010        1.683e+04     2946.2     5.7129     0.0000   1.106e+04   2.261e+04
+size_x_ind_2011        1.524e+04     2945.4     5.1756     0.0000      9471.0   2.102e+04
+size_x_ind_2012        1.414e+04     3250.8     4.3509     0.0000      7772.0   2.052e+04
+size_x_ind_2013           6228.1     2970.3     2.0968     0.0360      405.83   1.205e+04
+size_x_ind_2014           6247.9     3150.6     1.9831     0.0474      72.334   1.242e+04
+=========================================================================================
+
+=== DiD Analysis for Finance and Insurance ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Finance and Insurance_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Finance and Insurance_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.053e+04     787.16     13.372     0.0000      8983.2   1.207e+04
+large_estab_intensity     529.83     3860.4     0.1372     0.8908     -7037.1      8096.7
+size_x_ind_post2015       7159.6     940.24     7.6146     0.0000      5316.6      9002.6
+size_x_ind_covid          4273.9     1602.5     2.6670     0.0077      1132.8      7415.1
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.052e+04     786.56     13.377     0.0000      8980.2   1.206e+04
+large_estab_intensity     1143.3     3854.8     0.2966     0.7668     -6412.7      8699.3
+size_x_ind_2010          -7653.8     1436.2    -5.3292     0.0000  -1.047e+04     -4838.6
+size_x_ind_2011          -8100.1     1295.1    -6.2544     0.0000  -1.064e+04     -5561.5
+size_x_ind_2012          -4810.2     1581.1    -3.0424     0.0024     -7909.4     -1711.1
+size_x_ind_2013          -7116.4     1653.2    -4.3046     0.0000  -1.036e+04     -3875.9
+size_x_ind_2014          -3830.6     1248.9    -3.0671     0.0022     -6278.6     -1382.5
+=========================================================================================
+
+=== DiD Analysis for Health Care and Social Assistance ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Health Care and Social Assistance_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Health Care and Social Assistance_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.077e+04     842.13     12.792     0.0000      9122.3   1.242e+04
+large_estab_intensity    -442.53     4147.2    -0.1067     0.9150     -8571.6      7686.5
+size_x_ind_post2015       7510.8     1305.9     5.7513     0.0000      4951.0   1.007e+04
+size_x_ind_covid         -866.57     1470.7    -0.5892     0.5557     -3749.3      2016.1
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.051e+04     799.05     13.152     0.0000      8942.9   1.208e+04
+large_estab_intensity     1053.9     3910.6     0.2695     0.7876     -6611.5      8719.3
+size_x_ind_2010          -3861.7     1864.6    -2.0711     0.0384     -7516.6     -206.89
+size_x_ind_2011          -6251.3     2252.7    -2.7751     0.0055  -1.067e+04     -1835.7
+size_x_ind_2012          -3999.6     2152.7    -1.8580     0.0632     -8219.3      219.97
+size_x_ind_2013          -2731.1     1945.0    -1.4042     0.1603     -6543.6      1081.3
+size_x_ind_2014          -4281.7     2182.7    -1.9617     0.0498     -8560.1     -3.3047
+=========================================================================================
+
+=== DiD Analysis for Information ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Information_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Information_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.036e+04     786.35     13.171     0.0000      8815.9    1.19e+04
+large_estab_intensity     1625.0     3852.5     0.4218     0.6732     -5926.4      9176.5
+size_x_ind_post2015       1079.8     860.09     1.2555     0.2093     -606.09      2765.7
+size_x_ind_covid          4103.8     1377.5     2.9792     0.0029      1403.7      6803.9
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.24     13.237     0.0000      8877.7   1.196e+04
+large_estab_intensity     1502.3     3858.6     0.3893     0.6970     -6061.1      9065.6
+size_x_ind_2010          -457.80     1377.4    -0.3324     0.7396     -3157.7      2242.1
+size_x_ind_2011          -3045.3     1200.9    -2.5359     0.0112     -5399.2     -691.36
+size_x_ind_2012          -2100.1     1114.3    -1.8847     0.0595     -4284.4      84.102
+size_x_ind_2013          -2524.5     1037.2    -2.4338     0.0150     -4557.6     -491.34
+size_x_ind_2014          -325.85     1224.2    -0.2662     0.7901     -2725.4      2073.7
+=========================================================================================
+
+=== DiD Analysis for Management of Companies and Enterprises ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Management of Companies and Enterprises_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Management of Companies and Enterprises_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.013e+04     761.60     13.307     0.0000      8641.9   1.163e+04
+large_estab_intensity     3078.0     3743.7     0.8222     0.4110     -4260.2   1.042e+04
+size_x_ind_post2015      -1797.4     2066.8    -0.8697     0.3845     -5848.6      2253.7
+size_x_ind_covid         -6160.1     2971.6    -2.0730     0.0382  -1.198e+04     -335.37
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.029e+04     772.14     13.327     0.0000      8777.1    1.18e+04
+large_estab_intensity     1988.1     3780.9     0.5258     0.5990     -5423.0      9399.1
+size_x_ind_2010          -3737.2     3787.8    -0.9867     0.3238  -1.116e+04      3687.3
+size_x_ind_2011           8325.8     4612.2     1.8052     0.0711     -714.82   1.737e+04
+size_x_ind_2012           3526.7     4129.9     0.8539     0.3932     -4568.5   1.162e+04
+size_x_ind_2013           7951.2     5473.0     1.4528     0.1463     -2776.6   1.868e+04
+size_x_ind_2014          -6654.5     4945.8    -1.3455     0.1785  -1.635e+04      3039.9
+=========================================================================================
+
+=== DiD Analysis for Manufacturing ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Manufacturing_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Manufacturing_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.038e+04     788.99     13.162     0.0000      8838.3   1.193e+04
+large_estab_intensity     1554.8     3863.1     0.4025     0.6874     -6017.5      9127.1
+size_x_ind_post2015       5501.9     2722.5     2.0209     0.0433      165.55   1.084e+04
+size_x_ind_covid         -4079.8     2867.5    -1.4228     0.1548     -9700.4      1540.9
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.79     13.227     0.0000      8876.0   1.196e+04
+large_estab_intensity     1466.9     3863.0     0.3797     0.7041     -6105.0      9038.9
+size_x_ind_2010           1096.2     1996.6     0.5490     0.5830     -2817.3      5009.7
+size_x_ind_2011          -7416.3     3987.9    -1.8597     0.0629  -1.523e+04      400.45
+size_x_ind_2012          -1466.5     2493.4    -0.5881     0.5564     -6353.8      3420.9
+size_x_ind_2013          -5093.5     3004.5    -1.6953     0.0900  -1.098e+04      795.67
+size_x_ind_2014          -1065.7     4352.9    -0.2448     0.8066     -9598.0      7466.5
+=========================================================================================
+
+=== DiD Analysis for Mining, Quarrying, and Oil and Gas Extraction ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Mining, Quarrying, and Oil and Gas Extraction_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Mining, Quarrying, and Oil and Gas Extraction_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.044e+04     791.93     13.179     0.0000      8884.7   1.199e+04
+large_estab_intensity     1317.9     3889.7     0.3388     0.7347     -6306.4      8942.2
+size_x_ind_post2015       2468.4     3715.4     0.6644     0.5065     -4814.2      9751.1
+size_x_ind_covid         -3353.2     6401.0    -0.5239     0.6004   -1.59e+04      9193.6
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.051e+04     787.81     13.340     0.0000      8965.2   1.205e+04
+large_estab_intensity     864.89     3861.8     0.2240     0.8228     -6704.9      8434.6
+size_x_ind_2010           4294.1     4762.7     0.9016     0.3673     -5041.5   1.363e+04
+size_x_ind_2011           2962.1     5125.7     0.5779     0.5633     -7084.9   1.301e+04
+size_x_ind_2012          -4.1324     4301.0    -0.0010     0.9992     -8434.7      8426.4
+size_x_ind_2013        1.237e+04     7594.4     1.6289     0.1034     -2515.3   2.726e+04
+size_x_ind_2014        1.677e+04     8855.7     1.8936     0.0583     -589.19   3.413e+04
+=========================================================================================
+
+=== DiD Analysis for Other Services (except Public Administration) ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Other Services (except Public Administration)_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Other Services (except Public Administration)_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.058e+04     796.14     13.288     0.0000      9018.4   1.214e+04
+large_estab_intensity     818.41     3895.9     0.2101     0.8336     -6818.1      8454.9
+size_x_ind_post2015   -2.179e+04     4364.9    -4.9924     0.0000  -3.035e+04  -1.324e+04
+size_x_ind_covid      -3.137e+04     6320.7    -4.9623     0.0000  -4.375e+04  -1.898e+04
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.044e+04     788.65     13.237     0.0000      8893.8   1.199e+04
+large_estab_intensity     1265.6     3867.3     0.3273     0.7435     -6314.8      8846.0
+size_x_ind_2010         2.97e+04     5700.8     5.2106     0.0000   1.853e+04   4.088e+04
+size_x_ind_2011        2.495e+04     5776.7     4.3193     0.0000   1.363e+04   3.627e+04
+size_x_ind_2012        2.068e+04     6468.0     3.1971     0.0014      8000.9   3.336e+04
+size_x_ind_2013        1.062e+04     6238.3     1.7023     0.0887     -1608.5   2.285e+04
+size_x_ind_2014        1.322e+04     5972.4     2.2139     0.0269      1515.5   2.493e+04
+=========================================================================================
+
+=== DiD Analysis for Professional, Scientific, and Technical Services ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Professional, Scientific, and Technical Services_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Professional, Scientific, and Technical Services_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.043e+04     787.95     13.231     0.0000      8880.8   1.197e+04
+large_estab_intensity     1398.2     3863.1     0.3619     0.7174     -6174.1      8970.5
+size_x_ind_post2015       972.25     3470.0     0.2802     0.7793     -5829.4      7773.9
+size_x_ind_covid          2045.6     5646.8     0.3623     0.7172     -9023.0   1.311e+04
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.042e+04     787.45     13.234     0.0000      8877.3   1.196e+04
+large_estab_intensity     1443.3     3860.7     0.3738     0.7085     -6124.3      9010.9
+size_x_ind_2010          -4907.4     5449.9    -0.9005     0.3679  -1.559e+04      5775.1
+size_x_ind_2011          -300.90     4612.1    -0.0652     0.9480     -9341.2      8739.4
+size_x_ind_2012          -3951.5     4849.4    -0.8148     0.4152  -1.346e+04      5554.0
+size_x_ind_2013           9994.6     6353.4     1.5731     0.1157     -2459.0   2.245e+04
+size_x_ind_2014          -5665.6     5578.4    -1.0156     0.3098   -1.66e+04      5268.8
+=========================================================================================
+
+=== DiD Analysis for Real Estate and Rental and Leasing ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Real Estate and Rental and Leasing_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Real Estate and Rental and Leasing_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.015e+04     778.85     13.038     0.0000      8628.3   1.168e+04
+large_estab_intensity     2299.5     3816.2     0.6025     0.5468     -5180.8      9779.7
+size_x_ind_post2015    1.449e+04     3213.7     4.5078     0.0000      8187.4   2.079e+04
+size_x_ind_covid       3.369e+04     6371.1     5.2883     0.0000    2.12e+04   4.618e+04
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.044e+04     784.47     13.308     0.0000      8902.0   1.198e+04
+large_estab_intensity     1527.2     3845.2     0.3972     0.6912     -6009.9      9064.4
+size_x_ind_2010       -2.381e+04     5618.7    -4.2369     0.0000  -3.482e+04  -1.279e+04
+size_x_ind_2011       -2.309e+04     6116.1    -3.7754     0.0002  -3.508e+04   -1.11e+04
+size_x_ind_2012       -1.111e+04     5297.3    -2.0981     0.0359   -2.15e+04     -730.66
+size_x_ind_2013          -7563.3     6410.3    -1.1799     0.2381  -2.013e+04      5001.9
+size_x_ind_2014          -4918.9     8859.2    -0.5552     0.5787  -2.228e+04   1.245e+04
+=========================================================================================
+
+=== DiD Analysis for Retail Trade ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Retail Trade_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Retail Trade_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.039e+04     788.72     13.170     0.0000      8841.4   1.193e+04
+large_estab_intensity     1678.4     3870.5     0.4336     0.6646     -5908.3      9265.0
+size_x_ind_post2015      -1815.1     613.60    -2.9582     0.0031     -3017.8     -612.38
+size_x_ind_covid         -974.99     827.96    -1.1776     0.2390     -2597.9      647.93
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.041e+04     788.77     13.198     0.0000      8863.9   1.196e+04
+large_estab_intensity     1458.9     3867.1     0.3773     0.7060     -6121.2      9039.1
+size_x_ind_2010           2649.1     828.15     3.1988     0.0014      1025.8      4272.4
+size_x_ind_2011           1051.0     936.32     1.1225     0.2617     -784.28      2886.4
+size_x_ind_2012           856.36     795.22     1.0769     0.2816     -702.39      2415.1
+size_x_ind_2013           919.33     924.41     0.9945     0.3200     -892.65      2731.3
+size_x_ind_2014           572.33     949.80     0.6026     0.5468     -1289.4      2434.1
+=========================================================================================
+
+=== DiD Analysis for Transportation and Warehousing ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Transportation and Warehousing_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Transportation and Warehousing_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.036e+04     785.48     13.191     0.0000      8821.4    1.19e+04
+large_estab_intensity     1627.2     3847.9     0.4229     0.6724     -5915.2      9169.6
+size_x_ind_post2015       3933.0     1362.9     2.8857     0.0039      1261.5      6604.5
+size_x_ind_covid          2692.1     1603.0     1.6794     0.0931     -450.02      5834.2
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.041e+04     785.99     13.248     0.0000      8871.9   1.195e+04
+large_estab_intensity     1519.0     3854.5     0.3941     0.6935     -6036.3      9074.3
+size_x_ind_2010          -1091.0     1561.3    -0.6988     0.4847     -4151.3      1969.4
+size_x_ind_2011          -5219.3     2456.1    -2.1250     0.0336  -1.003e+04     -404.97
+size_x_ind_2012          -4404.0     1884.3    -2.3372     0.0194     -8097.6     -710.47
+size_x_ind_2013          -3589.3     1960.0    -1.8313     0.0671     -7431.2      252.52
+size_x_ind_2014           857.55     2395.5     0.3580     0.7204     -3838.0      5553.1
+=========================================================================================
+
+=== DiD Analysis for Utilities ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Utilities_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Utilities_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.048e+04     780.05     13.431     0.0000      8947.7   1.201e+04
+large_estab_intensity     1235.5     3839.5     0.3218     0.7476     -6290.3      8761.4
+size_x_ind_post2015      -231.01     1454.1    -0.1589     0.8738     -3081.3      2619.2
+size_x_ind_covid         -2901.2     2343.6    -1.2379     0.2158     -7495.1      1692.6
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                   1.04e+04     770.15     13.501     0.0000      8888.0   1.191e+04
+large_estab_intensity     1553.5     3767.1     0.4124     0.6801     -5830.5      8937.5
+size_x_ind_2010           223.69     642.25     0.3483     0.7276     -1035.2      1482.6
+size_x_ind_2011          -1283.8     1554.3    -0.8260     0.4088     -4330.5      1762.8
+size_x_ind_2012          -96.253     1907.7    -0.0505     0.9598     -3835.7      3643.2
+size_x_ind_2013          -315.56     2076.6    -0.1520     0.8792     -4386.0      3754.9
+size_x_ind_2014           1170.4     1713.9     0.6829     0.4947     -2189.2      4529.9
+=========================================================================================
+
+=== DiD Analysis for Wholesale Trade ===
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:961: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Wholesale Trade_ind, post_2015, covid_period
+
+  main_results = model.fit(cov_type='clustered', cluster_entity=True)
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:973: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+Wholesale Trade_ind
+
+  trend_results = model_trends.fit(cov_type='clustered', cluster_entity=True)
+
+Main DiD Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.036e+04     800.93     12.936     0.0000      8791.0   1.193e+04
+large_estab_intensity     1777.1     3935.6     0.4515     0.6516     -5937.2      9491.3
+size_x_ind_post2015      -2067.5     2921.6    -0.7076     0.4792     -7794.3      3659.4
+size_x_ind_covid          1172.9     3585.6     0.3271     0.7436     -5855.4      8201.2
+=========================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                   1.04e+04     786.78     13.220     0.0000      8858.6   1.194e+04
+large_estab_intensity     1514.7     3858.8     0.3925     0.6947     -6049.2      9078.5
+size_x_ind_2010           4231.1     5358.4     0.7896     0.4298     -6272.1   1.473e+04
+size_x_ind_2011           7551.4     7755.7     0.9737     0.3302     -7650.8   2.275e+04
+size_x_ind_2012          -3990.7     3599.6    -1.1086     0.2676  -1.105e+04      3065.1
+size_x_ind_2013          -6365.5     2945.2    -2.1614     0.0307  -1.214e+04     -592.62
+size_x_ind_2014           4508.1     4663.3     0.9667     0.3337     -4632.7   1.365e+04
+=========================================================================================
+
+Examining all industries:
+
+All Industries and Observations:
+industry_name
+Accommodation and Food Services                     765
+Administrative and Support Services                 765
+Utilities                                           765
+Transportation and Warehousing                      765
+Retail Trade                                        765
+Real Estate and Rental and Leasing                  765
+Professional, Scientific, and Technical Services    765
+Other Services (except Public Administration)       765
+Manufacturing                                       765
+Wholesale Trade                                     765
+Information                                         765
+Health Care and Social Assistance                   765
+Finance and Insurance                               765
+Educational Services                                765
+Construction                                        765
+Arts, Entertainment, and Recreation                 765
+Mining, Quarrying, and Oil and Gas Extraction       739
+Agriculture, Forestry, Fishing and Hunting          727
+Management of Companies and Enterprises             708
+Name: count, dtype: int64
+
+Total Industries: 19
+
+Mean observations per industry: 758.6315789473684
+Min observations: 708
+Max observations: 765
+
+=== Running Event Study ===
+
+Event Study Results:
+==================================================
+
+Information:
+
+Post-2015 Effects:
+2015: -1049.103 
+2016: 318.863 
+2017: -23.906 
+2018: -107.230 
+2019: -1404.936 
+2020: 2816.269 
+
+Finance and Insurance:
+
+Post-2015 Effects:
+2015: 1036.465 
+2016: 1691.359 
+2017: 8570.416 ***
+2018: 6025.994 **
+2019: 6578.586 ***
+2020: 9532.497 ***
+
+Professional, Scientific, and Technical Services:
+
+Post-2015 Effects:
+2015: 4638.868 
+2016: -4448.739 
+2017: 7788.241 
+2018: 12931.852 **
+2019: 610.751 
+2020: 2938.510 
+
+Manufacturing:
+
+Post-2015 Effects:
+2015: 4188.722 
+2016: 2649.038 
+2017: 6274.977 
+2018: 6336.799 
+2019: -5056.479 
+2020: -1719.638 
+
+Retail Trade:
+
+Post-2015 Effects:
+2015: -1519.628 
+2016: -957.777 
+2017: 96.525 
+2018: -1543.424 
+2019: -3063.583 **
+2020: -1924.408 
+
+=== Running Placebo Tests ===
+
+Placebo Test Results:
+
+Placebo Year 2010:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.045e+04     790.87     13.217     0.0000      8902.5     1.2e+04
+large_estab_intensity     966.89     4007.6     0.2413     0.8094     -6888.5      8822.3
+size_x_post_2010          387.55     951.64     0.4072     0.6838     -1477.8      2252.9
+=========================================================================================
+
+Placebo Year 2011:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.053e+04     787.81     13.369     0.0000      8988.1   1.208e+04
+large_estab_intensity     22.105     3913.8     0.0056     0.9955     -7649.6      7693.8
+size_x_post_2011          1167.3     838.60     1.3920     0.1639     -476.43      2811.1
+=========================================================================================
+
+Placebo Year 2012:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.052e+04     792.00     13.286     0.0000      8970.1   1.207e+04
+large_estab_intensity     321.79     3962.1     0.0812     0.9353     -7444.6      8088.2
+size_x_post_2012          909.44     835.41     1.0886     0.2763     -728.09      2547.0
+=========================================================================================
+
+Placebo Year 2013:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                  1.053e+04     796.09     13.222     0.0000      8965.5   1.209e+04
+large_estab_intensity     367.21     4013.5     0.0915     0.9271     -7499.8      8234.2
+size_x_post_2013          906.07     961.95     0.9419     0.3463     -979.50      2791.6
+=========================================================================================
+
+=== Analyzing Industry Characteristics ===
+
+Industry Characteristics Results:
+                                             Parameter Estimates                                             
+=============================================================================================================
+                                           Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-------------------------------------------------------------------------------------------------------------
+const                                      1.044e+04     765.54     13.641     0.0000      8942.5   1.194e+04
+large_estab_intensity                         1779.6     4137.1     0.4302     0.6671     -6329.7      9888.9
+large_estab_intensity_x_digital_intensity    -4882.1     9219.5    -0.5295     0.5964  -2.295e+04   1.319e+04
+post2015_x_digital_intensity                  1916.8     296.14     6.4728     0.0000      1336.4      2497.3
+=============================================================================================================
+
+=== Analyzing Potential Mechanisms ===
+
+Mechanism Analysis Results:
+
+Automation Exposure:
+                                              Parameter Estimates                                              
+===============================================================================================================
+                                             Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------------------------------------
+const                                        1.015e+04     777.57     13.049     0.0000      8622.2   1.167e+04
+large_estab_intensity                           308.12     4173.5     0.0738     0.9411     -7872.5      8488.7
+large_estab_intensity_x_automation_exposure   1.05e+04     8680.1     1.2093     0.2266     -6517.5   2.751e+04
+===============================================================================================================
+
+Skill Intensity:
+                                            Parameter Estimates                                            
+===========================================================================================================
+                                         Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------------------------
+const                                    1.062e+04     657.81     16.143     0.0000      9329.7   1.191e+04
+large_estab_intensity                   -4.029e+04     7278.2    -5.5363     0.0000  -5.456e+04  -2.603e+04
+large_estab_intensity_x_skill_intensity  3.368e+04     5296.9     6.3584     0.0000    2.33e+04   4.406e+04
+===========================================================================================================
+
+Organizational Complexity:
+                                                 Parameter Estimates                                                 
+=====================================================================================================================
+                                                   Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------------------------------------------
+const                                                 9099.4     790.42     11.512     0.0000      7550.1   1.065e+04
+large_estab_intensity                              1.576e+04     7532.4     2.0925     0.0364      997.15   3.053e+04
+large_estab_intensity_x_organizational_complexity    -4418.0     2681.6    -1.6475     0.0995     -9674.4      838.31
+=====================================================================================================================
+venvjaredweissberg@DN51vstm Econ101 % 
+
+python3 analysis2.py
+
+=== Data Quality Checks ===
+
+Year range: 2007 to 2021
+
+Dataset Shape: (14414, 50)
+
+Columns: ['state_name', 'industry_name', 'broad_sector', 'YEAR', 'workers', 'median_wage', 'mean_wage', 'total_wage_bill', 'pct_change_employment', 'firms_01: Total', 'firms_
+02: <5', 'firms_03: 5-9', 'firms_04: 10-19', 'firms_05: <20', 'firms_06: 20-99', 'firms_07: 100-499', 'firms_08: <500', 'firms_09: 500+', 'establishments_01: Total', 'establishments_02: <5', 'establishments_03: 5-9', 'establishments_04: 10-19', 'establishments_05: <20', 'establishments_06: 20-99', 'establishments_07: 100-499', 'establishments_08: <500', 'establishments_09: 500+', 'employment_01: Total', 'employment_02: <5', 'employment_03: 5-9', 'employment_04: 10-19', 'employment_05: <20', 'employment_06: 20-99', 'employment_07: 100-499', 'employment_08: <500', 'employment_09: 500+', 'annual_payroll_01: Total', 'annual_payroll_02: <5', 'annual_payroll_03: 5-9', 'annual_payroll_04: 10-19', 'annual_payroll_05: <20', 'annual_payroll_06: 20-99', 'annual_payroll_07: 100-499', 'annual_payroll_08: <500', 'annual_payroll_09: 500+', 'state_industry', 'large_estab_intensity', 'wage_relationship_flag', 'wage_inequality', 'wage_inequality_ratio']                                                                                               
+Missing Values:
+961
+
+Key Variables Summary:
+
+establishments_01: Total:
+count     14414.000000
+mean      39906.663313
+std       65292.194257
+min          17.000000
+25%        4745.250000
+50%       16592.000000
+75%       47028.750000
+max      703815.000000
+Name: establishments_01: Total, dtype: float64
+
+establishments_09: 500+:
+count     14414.000000
+mean       6560.995629
+std       13083.331271
+min           0.000000
+25%         617.000000
+50%        2200.000000
+75%        6850.000000
+max      158590.000000
+Name: establishments_09: 500+, dtype: float64
+
+median_wage:
+count     14414.000000
+mean      36769.120300
+std       18683.409854
+min          60.000000
+25%       22000.000000
+50%       35000.000000
+75%       46000.000000
+max      328000.000000
+Name: median_wage, dtype: float64
+
+mean_wage:
+count     14414.000000
+mean      47483.037738
+std       22339.252641
+min        3000.000000
+25%       30650.263049
+50%       44140.592048
+75%       59210.777141
+max      270222.222222
+Name: mean_wage, dtype: float64
+
+total_wage_bill:
+count    1.441400e+04
+mean     6.451474e+07
+std      1.214068e+08
+min      3.000000e+03
+25%      6.855532e+06
+50%      2.191207e+07
+75%      6.581513e+07
+max      2.014204e+09
+Name: total_wage_bill, dtype: float64
+
+Industries per State:
+state_name
+Alabama                 19
+Alaska                  19
+Arizona                 19
+Arkansas                19
+California              19
+Colorado                19
+Connecticut             19
+Delaware                19
+District of Columbia    17
+Florida                 19
+Georgia                 19
+Hawaii                  19
+Idaho                   19
+Illinois                19
+Indiana                 19
+Iowa                    19
+Kansas                  19
+Kentucky                19
+Louisiana               19
+Maine                   19
+Maryland                19
+Massachusetts           19
+Michigan                19
+Minnesota               19
+Mississippi             19
+Missouri                19
+Montana                 19
+Nebraska                19
+Nevada                  19
+New Hampshire           19
+New Jersey              19
+New Mexico              19
+New York                19
+North Carolina          19
+North Dakota            17
+Ohio                    19
+Oklahoma                19
+Oregon                  19
+Pennsylvania            19
+Rhode Island            19
+South Carolina          19
+South Dakota            18
+Tennessee               19
+Texas                   19
+Utah                    19
+Vermont                 19
+Virginia                19
+Washington              19
+West Virginia           19
+Wisconsin               19
+Wyoming                 18
+Name: industry_name, dtype: int64
+
+Years per State-Industry:
+YEAR
+10      3
+11      1
+12      1
+13      3
+14      3
+15    952
+Name: count, dtype: int64
+
+Suspicious Values Check:
+Negative wages: 0
+Zero total establishments: 0
+Mean < Median wage: 267
+
+Potential Outliers (large establishments):
+Number of outliers: 506
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:646: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  regional_stats = regional_stats.applymap(lambda x: format_number(x) if isinstance(x, (int, float)) and not isinstance(x, str) else x)
+
+=== Digital Transformation Analysis ===
+
+Triple-Difference Results:
+                                     Parameter Estimates                                     
+=============================================================================================
+                           Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+---------------------------------------------------------------------------------------------
+const                       1.04e+04     780.59     13.318     0.0000      8866.1   1.193e+04
+large_estab_intensity         2429.9     4446.3     0.5465     0.5847     -6285.4   1.115e+04
+size_x_digital               -5637.3     9368.9    -0.6017     0.5474    -2.4e+04   1.273e+04
+size_x_post2015              -562.89     1068.6    -0.5267     0.5984     -2657.5      1531.8
+digital_x_post2015            1062.0     419.78     2.5299     0.0114      239.18      1884.8
+size_x_digital_x_post2015     3019.7     1587.2     1.9025     0.0571     -91.416      6130.9
+=============================================================================================
+
+Parallel Trends Test:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                     9497.4     1549.6     6.1289     0.0000      6459.6   1.254e+04
+large_estab_intensity     86.892     7760.1     0.0112     0.9911  -1.513e+04    1.53e+04
+size_x_digital_x_t-5      1537.8     1541.0     0.9980     0.3183     -1483.0      4558.6
+size_x_digital_x_t-4     -1759.9     1435.2    -1.2262     0.2202     -4573.2      1053.5
+size_x_digital_x_t-3      804.16     1565.8     0.5136     0.6076     -2265.4      3873.7
+size_x_digital_x_t-2     -3342.9     1591.8    -2.1001     0.0358     -6463.3     -222.47
+size_x_digital_x_t-1      149.08     1525.7     0.0977     0.9222     -2841.8      3139.9
+digital_x_t-5            -681.46     486.42    -1.4010     0.1613     -1635.0      272.07
+digital_x_t-4            -33.484     529.01    -0.0633     0.9495     -1070.5      1003.5
+digital_x_t-3            -315.63     516.76    -0.6108     0.5414     -1328.6      697.38
+digital_x_t-2             1016.3     556.77     1.8254     0.0680     -75.100      2107.8
+digital_x_t-1             564.49     611.33     0.9234     0.3558     -633.91      1762.9
+=========================================================================================
+/Users/jaredweissberg/Courses/Econ101/analysis2.py:1225: AbsorbingEffectWarning: 
+Variables have been fully absorbed and have removed from the regression:
+
+digital_x_tnan, size_x_digital_x_tnan
+
+  results = model.fit(cov_type='clustered', cluster_entity=True)
+
+Robust Event Study Results:
+                                   Parameter Estimates                                   
+=========================================================================================
+                       Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+-----------------------------------------------------------------------------------------
+const                 -4.729e+04  1.977e+05    -0.2392     0.8110  -4.348e+05   3.403e+05
+large_estab_intensity     1030.0     3830.1     0.2689     0.7880     -6477.6      8537.6
+ind_trend                 152.14     521.78     0.2916     0.7706     -870.63      1174.9
+digital_x_t-2            -293.96     367.19    -0.8006     0.4234     -1013.7      425.78
+size_x_digital_x_t-2     -328.27     988.68    -0.3320     0.7399     -2266.2      1609.7
+digital_x_t-1             398.14     381.25     1.0443     0.2964     -349.17      1145.4
+size_x_digital_x_t-1     -1428.2     1042.6    -1.3698     0.1708     -3471.9      615.46
+digital_x_t0              715.62     460.55     1.5538     0.1202     -187.13      1618.4
+size_x_digital_x_t0      -168.02     1181.7    -0.1422     0.8869     -2484.4      2148.4
+digital_x_t1              1068.8     504.61     2.1180     0.0342      79.663      2057.9
+size_x_digital_x_t1       1509.1     1335.3     1.1302     0.2584     -1108.3      4126.6
+digital_x_t2              1687.3     547.24     3.0833     0.0021      614.62      2760.0
+size_x_digital_x_t2       163.03     1595.3     0.1022     0.9186     -2963.9      3290.0
+digital_x_t3              1164.5     688.82     1.6905     0.0909     -185.70      2514.7
+size_x_digital_x_t3       5358.4     2172.6     2.4663     0.0137      1099.8      9616.9
+=========================================================================================
+
+Verifying Event Study Data:
+==========================
+
+1. Base Effects:
+large_estab_intensity effect: 1030.0102
+Industry trend: 152.1380
+
+2. Digital Effects by Period:
+
+Period t-2:
+Base digital effect: -293.96
+Size interaction: -328.2700
+
+Period t-1:
+Base digital effect: 398.14
+Size interaction: -1428.2164
+
+Period t0:
+Base digital effect: 715.62
+Size interaction: -168.0165
+
+Period t1:
+Base digital effect: 1068.77
+Size interaction: 1509.1464
+
+Period t2:
+Base digital effect: 1687.29
+Size interaction: 163.0340
+
+Period t3:
+Base digital effect: 1164.49
+Size interaction: 5358.3529
+
+3. Sample Statistics:
+
+Mean large_estab_intensity by group:
+digital
+0    0.185493
+1    0.301985
+Name: large_estab_intensity, dtype: float64
+
+4. Total Effects at Mean Size:
+Mean establishment size: 0.2
+
+t-2 total effect at mean size: -360.94
+
+t-1 total effect at mean size: 106.73
+
+t0 total effect at mean size: 681.34
+
+t1 total effect at mean size: 1376.70
+
+t2 total effect at mean size: 1720.56
+
+t3 total effect at mean size: 2257.81
+
+Key Coefficients for Plotting:
+==============================
+
+Base Effect (Non-Digital):
+large_estab_intensity coefficient: 1030.0102 (p=0.7880)
+
+Digital Industry Effects by Period:
+t-2: -293.96 (p=0.4234)
+t-1: 398.14 (p=0.2964)
+t0: 715.62 (p=0.1202)
+t1: 1068.77 (p=0.0342)
+t2: 1687.29 (p=0.0021)
+t3: 1164.49 (p=0.0909)
+
+Size x Digital Interactions by Period:
+t-2: -328.2700 (p=0.7399)
+t-1: -1428.2164 (p=0.1708)
+t0: -168.0165 (p=0.8869)
+t1: 1509.1464 (p=0.2584)
+t2: 163.0340 (p=0.9186)
+t3: 5358.3529 (p=0.0137)
+
+

@@ -1,0 +1,1217 @@
+state_name,industry_name,YEAR,state_value_added
+California,Accommodation and Food Services,2007,161354.22660273485
+California,Accommodation and Food Services,2008,163946.8752701184
+California,Accommodation and Food Services,2009,158558.12903225806
+California,Accommodation and Food Services,2010,165087.45355099996
+California,Accommodation and Food Services,2011,173400.15716117292
+California,Accommodation and Food Services,2012,183953.9795114263
+California,Accommodation and Food Services,2013,196121.56171473578
+California,Accommodation and Food Services,2014,211309.6790833057
+California,Accommodation and Food Services,2015,236259.11958552143
+California,Accommodation and Food Services,2016,247009.91066443326
+California,Accommodation and Food Services,2017,261373.50703491402
+California,Accommodation and Food Services,2018,271817.731678286
+California,Accommodation and Food Services,2019,289368.48538349237
+California,Accommodation and Food Services,2020,227511.20689655174
+California,Accommodation and Food Services,2021,294777.97531061486
+California,Accommodation and Food Services,2022,339788.1687132942
+California,Administrative and Support and Waste Management Services,2007,191382.9724277068
+California,Administrative and Support and Waste Management Services,2008,189412.1334813557
+California,Administrative and Support and Waste Management Services,2009,186469.25570625206
+California,Administrative and Support and Waste Management Services,2010,194380.70639891524
+California,Administrative and Support and Waste Management Services,2011,205090.91479089597
+California,Administrative and Support and Waste Management Services,2012,211634.75636318378
+California,Administrative and Support and Waste Management Services,2013,211028.32414949688
+California,Administrative and Support and Waste Management Services,2014,229885.61142445696
+California,Administrative and Support and Waste Management Services,2015,238443.71647730548
+California,Administrative and Support and Waste Management Services,2016,245763.47298401213
+California,Administrative and Support and Waste Management Services,2017,262219.4799109758
+California,Administrative and Support and Waste Management Services,2018,280986.8835498333
+California,Administrative and Support and Waste Management Services,2019,294558.63716512144
+California,Administrative and Support and Waste Management Services,2020,292253.46202935546
+California,Administrative and Support and Waste Management Services,2021,328099.18938393175
+California,Administrative and Support and Waste Management Services,2022,359791.4167937207
+California,"Agriculture, Forestry, Fishing, and Hunting",2007,71112.36195813416
+California,"Agriculture, Forestry, Fishing, and Hunting",2008,75231.78980228929
+California,"Agriculture, Forestry, Fishing, and Hunting",2009,67119.82292179046
+California,"Agriculture, Forestry, Fishing, and Hunting",2010,76344.39326556545
+California,"Agriculture, Forestry, Fishing, and Hunting",2011,97440
+California,"Agriculture, Forestry, Fishing, and Hunting",2012,99926.66771802555
+California,"Agriculture, Forestry, Fishing, and Hunting",2013,113922.15984147952
+California,"Agriculture, Forestry, Fishing, and Hunting",2014,109817.99738219894
+California,"Agriculture, Forestry, Fishing, and Hunting",2015,100399.66410748562
+California,"Agriculture, Forestry, Fishing, and Hunting",2016,92287.3495989305
+California,"Agriculture, Forestry, Fishing, and Hunting",2017,96167.85833611761
+California,"Agriculture, Forestry, Fishing, and Hunting",2018,96944.2835494191
+California,"Agriculture, Forestry, Fishing, and Hunting",2019,85789.24991358451
+California,"Agriculture, Forestry, Fishing, and Hunting",2020,85811.67728237792
+California,"Agriculture, Forestry, Fishing, and Hunting",2021,128482.33438485803
+California,"Agriculture, Forestry, Fishing, and Hunting",2022,155982.33273351874
+California,"Arts, Entertainment, and Recreation",2007,63998.23962636968
+California,"Arts, Entertainment, and Recreation",2008,68171.61624891963
+California,"Arts, Entertainment, and Recreation",2009,68507.26286314316
+California,"Arts, Entertainment, and Recreation",2010,72538.69904596705
+California,"Arts, Entertainment, and Recreation",2011,75509.61145194274
+California,"Arts, Entertainment, and Recreation",2012,81475.71906354516
+California,"Arts, Entertainment, and Recreation",2013,85007.53696931149
+California,"Arts, Entertainment, and Recreation",2014,90076.53237184511
+California,"Arts, Entertainment, and Recreation",2015,92855.95145480007
+California,"Arts, Entertainment, and Recreation",2016,99275.10435301132
+California,"Arts, Entertainment, and Recreation",2017,102355.6062767475
+California,"Arts, Entertainment, and Recreation",2018,110226.62733529991
+California,"Arts, Entertainment, and Recreation",2019,113761.84914841849
+California,"Arts, Entertainment, and Recreation",2020,85594.74872953135
+California,"Arts, Entertainment, and Recreation",2021,103609.29502655721
+California,"Arts, Entertainment, and Recreation",2022,125137.88602045787
+California,Construction,2007,296415.05940158403
+California,Construction,2008,256281.8019047619
+California,Construction,2009,215411.46209386282
+California,Construction,2010,194807.0667072799
+California,Construction,2011,195042.9430365653
+California,Construction,2012,203807.40218088517
+California,Construction,2013,225704.88012242815
+California,Construction,2014,247020.3301906213
+California,Construction,2015,269497.73607506487
+California,Construction,2016,284143.1299037607
+California,Construction,2017,314670.9520785866
+California,Construction,2018,335828.6200036173
+California,Construction,2019,361589.9125849868
+California,Construction,2020,378236.5560365561
+California,Construction,2021,397952.7742888807
+California,Construction,2022,413156.3618459031
+California,Educational Services,2007,55628.546458607765
+California,Educational Services,2008,61572.77362176585
+California,Educational Services,2009,67714.2119361923
+California,Educational Services,2010,70813.09869637241
+California,Educational Services,2011,74445.33927180685
+California,Educational Services,2012,76984.7003929273
+California,Educational Services,2013,77566.63737203392
+California,Educational Services,2014,81226.42975091285
+California,Educational Services,2015,85745.848699981565
+California,Educational Services,2016,88875.69708419639
+California,Educational Services,2017,91547.8392654171
+California,Educational Services,2018,93871.50076906175
+California,Educational Services,2019,99838.9558317239
+California,Educational Services,2020,94843.63321609145
+California,Educational Services,2021,98960.20827254977
+California,Educational Services,2022,104274.8314653643
+California,Finance and Insurance,2007,395532.46285457
+California,Finance and Insurance,2008,315926.3730726595
+California,Finance and Insurance,2009,344113.76233965054
+California,Finance and Insurance,2010,352403.2683982684
+California,Finance and Insurance,2011,372395.5721449738
+California,Finance and Insurance,2012,417422.6104152933
+California,Finance and Insurance,2013,404366.37117079314
+California,Finance and Insurance,2014,454539.637599094
+California,Finance and Insurance,2015,488916.4761192435
+California,Finance and Insurance,2016,509932.7207600062
+California,Finance and Insurance,2017,529717.5991861648
+California,Finance and Insurance,2018,543067.4422133428
+California,Finance and Insurance,2019,567012.9964953271
+California,Finance and Insurance,2020,597494.1512495943
+California,Finance and Insurance,2021,625324.1869417164
+California,Finance and Insurance,2022,622083.3526709054
+California,Health Care and Social Assistance,2007,341575.8279106395
+California,Health Care and Social Assistance,2008,377592.88449078164
+California,Health Care and Social Assistance,2009,400537.270194986
+California,Health Care and Social Assistance,2010,415895.4147561484
+California,Health Care and Social Assistance,2011,426461.0231989327
+California,Health Care and Social Assistance,2012,449058.55013799446
+California,Health Care and Social Assistance,2013,465267.91799642995
+California,Health Care and Social Assistance,2014,474722.11948162166
+California,Health Care and Social Assistance,2015,508587.9776833342
+California,Health Care and Social Assistance,2016,531925.7188222705
+California,Health Care and Social Assistance,2017,552745.4170647091
+California,Health Care and Social Assistance,2018,585036.9877979092
+California,Health Care and Social Assistance,2019,609245.9188386671
+California,Health Care and Social Assistance,2020,624594.9902588367
+California,Health Care and Social Assistance,2021,682667.346731971
+California,Health Care and Social Assistance,2022,714535.5804529202
+California,Information,2007,326818.94213381555
+California,Information,2008,347714.4242202506
+California,Information,2009,331139.20064594265
+California,Information,2010,351792.64302301034
+California,Information,2011,361176.4314985048
+California,Information,2012,364466.6774124221
+California,Information,2013,401310.9551117263
+California,Information,2014,418887.2740963855
+California,Information,2015,444501.55513666355
+California,Information,2016,479429.3018499582
+California,Information,2017,506777.51018895884
+California,Information,2018,533053.4877179824
+California,Information,2019,587734.2245989305
+California,Information,2020,622897.0621611399
+California,Information,2021,689083.0166503427
+California,Information,2022,708045.0747581354
+California,Management of Companies and Enterprises,2007,95113.63636363637
+California,Management of Companies and Enterprises,2008,92087.32394366196
+California,Management of Companies and Enterprises,2009,87500
+California,Management of Companies and Enterprises,2010,92546.51162790698
+California,Management of Companies and Enterprises,2011,95731.4381270903
+California,Management of Companies and Enterprises,2012,112086.57243816255
+California,Management of Companies and Enterprises,2013,106150.7418397626
+California,Management of Companies and Enterprises,2014,127377.30061349693
+California,Management of Companies and Enterprises,2015,108553.47593582887
+California,Management of Companies and Enterprises,2016,128392.72727272726
+California,Management of Companies and Enterprises,2017,127049.25373134328
+California,Management of Companies and Enterprises,2018,167955.15873015873
+California,Management of Companies and Enterprises,2019,158338.89674681754
+California,Management of Companies and Enterprises,2020,155405.3333333333
+California,Management of Companies and Enterprises,2021,158473.3455882353
+California,Management of Companies and Enterprises,2022,171990.4255319149
+California,Manufacturing,2007,710108.219624645
+California,Manufacturing,2008,703752.3632151537
+California,Manufacturing,2009,682192.80194194
+California,Manufacturing,2010,720742.7698574339
+California,Manufacturing,2011,754062.6363085622
+California,Manufacturing,2012,776923.3192700403
+California,Manufacturing,2013,785812.7208480566
+California,Manufacturing,2014,815153.3980582524
+California,Manufacturing,2015,834074.3388116925
+California,Manufacturing,2016,816904.6018991965
+California,Manufacturing,2017,829249.4308054282
+California,Manufacturing,2018,888051.0108789833
+California,Manufacturing,2019,879178.2475037533
+California,Manufacturing,2020,851956.0408660605
+California,Manufacturing,2021,977933.1637995512
+California,Manufacturing,2022,1038167.5736424938
+California,"Mining, Quarrying, and Oil and Gas Extraction",2007,30055.564681724845
+California,"Mining, Quarrying, and Oil and Gas Extraction",2008,43002.14822771214
+California,"Mining, Quarrying, and Oil and Gas Extraction",2009,28950.116369278512
+California,"Mining, Quarrying, and Oil and Gas Extraction",2010,29033.631067961167
+California,"Mining, Quarrying, and Oil and Gas Extraction",2011,38916.35062611807
+California,"Mining, Quarrying, and Oil and Gas Extraction",2012,33579.886327754975
+California,"Mining, Quarrying, and Oil and Gas Extraction",2013,37231.15455100794
+California,"Mining, Quarrying, and Oil and Gas Extraction",2014,34562.933333333334
+California,"Mining, Quarrying, and Oil and Gas Extraction",2015,21889.3556627874
+California,"Mining, Quarrying, and Oil and Gas Extraction",2016,17528.777472527472
+California,"Mining, Quarrying, and Oil and Gas Extraction",2017,20395.597945708
+California,"Mining, Quarrying, and Oil and Gas Extraction",2018,25023.036988968204
+California,"Mining, Quarrying, and Oil and Gas Extraction",2019,21415.97444089457
+California,"Mining, Quarrying, and Oil and Gas Extraction",2020,18474.509803921566
+California,"Mining, Quarrying, and Oil and Gas Extraction",2021,27387.313047962867
+California,"Mining, Quarrying, and Oil and Gas Extraction",2022,38580.17094017094
+California,"Other Services, Except Public Administration",2007,133168.68088674598
+California,"Other Services, Except Public Administration",2008,132622.10286293388
+California,"Other Services, Except Public Administration",2009,132691.09440435946
+California,"Other Services, Except Public Administration",2010,133111.7223444689
+California,"Other Services, Except Public Administration",2011,137374.18396180455
+California,"Other Services, Except Public Administration",2012,145351.14009709214
+California,"Other Services, Except Public Administration",2013,147087.28801482116
+California,"Other Services, Except Public Administration",2014,159191.245311684
+California,"Other Services, Except Public Administration",2015,167485.1194734583
+California,"Other Services, Except Public Administration",2016,173589.91485680462
+California,"Other Services, Except Public Administration",2017,176995.44814427837
+California,"Other Services, Except Public Administration",2018,188323.19407008088
+California,"Other Services, Except Public Administration",2019,194188.58922111816
+California,"Other Services, Except Public Administration",2020,188556.1581920904
+California,"Other Services, Except Public Administration",2021,194067.9552390641
+California,"Other Services, Except Public Administration",2022,220625.17995382316
+California,"Professional, Scientific, and Technical Services",2007,453107.87655125005
+California,"Professional, Scientific, and Technical Services",2008,489582.0912163339
+California,"Professional, Scientific, and Technical Services",2009,468211.1975618502
+California,"Professional, Scientific, and Technical Services",2010,486051.4600115075
+California,"Professional, Scientific, and Technical Services",2011,517673.3207225251
+California,"Professional, Scientific, and Technical Services",2012,539345.8439175839
+California,"Professional, Scientific, and Technical Services",2013,549067.8074054518
+California,"Professional, Scientific, and Technical Services",2014,571945.3290008124
+California,"Professional, Scientific, and Technical Services",2015,621457.4681126379
+California,"Professional, Scientific, and Technical Services",2016,650467.6161210259
+California,"Professional, Scientific, and Technical Services",2017,683399.243792325
+California,"Professional, Scientific, and Technical Services",2018,718461.8998197411
+California,"Professional, Scientific, and Technical Services",2019,771610.9597491389
+California,"Professional, Scientific, and Technical Services",2020,798948.4488868088
+California,"Professional, Scientific, and Technical Services",2021,878560.4511005924
+California,"Professional, Scientific, and Technical Services",2022,925545.8286674131
+California,Real Estate and Rental and Leasing,2007,770666.6666666666
+California,Real Estate and Rental and Leasing,2008,789815.2388797364
+California,Real Estate and Rental and Leasing,2009,811043.4334763949
+California,Real Estate and Rental and Leasing,2010,894498.8416988417
+California,Real Estate and Rental and Leasing,2011,949292.4590163935
+California,Real Estate and Rental and Leasing,2012,950210.3448275862
+California,Real Estate and Rental and Leasing,2013,912141.1764705882
+California,Real Estate and Rental and Leasing,2014,1015995.0989632421
+California,Real Estate and Rental and Leasing,2015,1075563.055062167
+California,Real Estate and Rental and Leasing,2016,1098278.0694326842
+California,Real Estate and Rental and Leasing,2017,1143520.942408377
+California,Real Estate and Rental and Leasing,2018,1202834.549516009
+California,Real Estate and Rental and Leasing,2019,1218203.0437539632
+California,Real Estate and Rental and Leasing,2020,1252585.7851239669
+California,Real Estate and Rental and Leasing,2021,1361031.0248972685
+California,Real Estate and Rental and Leasing,2022,1478855.1203501094
+California,Retail Trade,2007,341983.82636346115
+California,Retail Trade,2008,333930.80856945406
+California,Retail Trade,2009,321092.7777910505
+California,Retail Trade,2010,340710.97896133433
+California,Retail Trade,2011,346072.1469380046
+California,Retail Trade,2012,361619.4632123387
+California,Retail Trade,2013,384251.18852459016
+California,Retail Trade,2014,398390.45056234044
+California,Retail Trade,2015,421870.32182245527
+California,Retail Trade,2016,447881.27252781694
+California,Retail Trade,2017,458384.5885947962
+California,Retail Trade,2018,484433.23442136496
+California,Retail Trade,2019,500410.74348692904
+California,Retail Trade,2020,529871.1113811013
+California,Retail Trade,2021,608644.0351322069
+California,Retail Trade,2022,619566.0704538774
+California,Transportation and Warehousing,2007,152699.4042245893
+California,Transportation and Warehousing,2008,156076.7211201867
+California,Transportation and Warehousing,2009,150488.7814190264
+California,Transportation and Warehousing,2010,159145.20775977976
+California,Transportation and Warehousing,2011,167722.56761953596
+California,Transportation and Warehousing,2012,174785.14071532938
+California,Transportation and Warehousing,2013,186100.54361567635
+California,Transportation and Warehousing,2014,201572.94662735422
+California,Transportation and Warehousing,2015,222960.40503187227
+California,Transportation and Warehousing,2016,236897.6439208713
+California,Transportation and Warehousing,2017,252832.62304454032
+California,Transportation and Warehousing,2018,269579.807073955
+California,Transportation and Warehousing,2019,286584.21155347384
+California,Transportation and Warehousing,2020,268114.5550777373
+California,Transportation and Warehousing,2021,328450.4217525057
+California,Transportation and Warehousing,2022,365095.11662801803
+California,Utilities,2007,89505.26315789473
+California,Utilities,2008,92319.47008038106
+California,Utilities,2009,102879.34655775964
+California,Utilities,2010,107532.7346465817
+California,Utilities,2011,108750.04497751124
+California,Utilities,2012,108768.05344670513
+California,Utilities,2013,114030.01982441236
+California,Utilities,2014,114918.21296031972
+California,Utilities,2015,116731.02453102452
+California,Utilities,2016,121653.97549159304
+California,Utilities,2017,121078.70701513068
+California,Utilities,2018,114865.46883773162
+California,Utilities,2019,127891.06994747029
+California,Utilities,2020,136961.90641247833
+California,Utilities,2021,149888.5729907053
+California,Utilities,2022,161739.74065598779
+California,Wholesale Trade,2007,359703.7514563107
+California,Wholesale Trade,2008,366025.456836799
+California,Wholesale Trade,2009,358904.45108785917
+California,Wholesale Trade,2010,386518.57600809855
+California,Wholesale Trade,2011,416311.0364937704
+California,Wholesale Trade,2012,436241.0786106033
+California,Wholesale Trade,2013,454512.5384090133
+California,Wholesale Trade,2014,474309.8431405096
+California,Wholesale Trade,2015,483273.9995007904
+California,Wholesale Trade,2016,489032.557748845
+California,Wholesale Trade,2017,493351.43675666285
+California,Wholesale Trade,2018,528315.4361824116
+California,Wholesale Trade,2019,543678.2322678587
+California,Wholesale Trade,2020,569916.8588957055
+California,Wholesale Trade,2021,630985.7014746912
+California,Wholesale Trade,2022,680560.6269038026
+Michigan,Accommodation and Food Services,2007,49234.76291955248
+Michigan,Accommodation and Food Services,2008,48391.35621056271
+Michigan,Accommodation and Food Services,2009,45517.16129032258
+Michigan,Accommodation and Food Services,2010,45840.76656507035
+Michigan,Accommodation and Food Services,2011,47765.11849125274
+Michigan,Accommodation and Food Services,2012,48938.29787234043
+Michigan,Accommodation and Food Services,2013,49940.67434272212
+Michigan,Accommodation and Food Services,2014,52622.950517667
+Michigan,Accommodation and Food Services,2015,58612.853769428686
+Michigan,Accommodation and Food Services,2016,61157.52024008934
+Michigan,Accommodation and Food Services,2017,64045.732152162585
+Michigan,Accommodation and Food Services,2018,65983.9415065465
+Michigan,Accommodation and Food Services,2019,71935.11696601365
+Michigan,Accommodation and Food Services,2020,67681.15338882283
+Michigan,Accommodation and Food Services,2021,70602.85246294596
+Michigan,Accommodation and Food Services,2022,80069.63160704751
+Michigan,Administrative and Support and Waste Management Services,2007,40646.429051782114
+Michigan,Administrative and Support and Waste Management Services,2008,43412.9171292366
+Michigan,Administrative and Support and Waste Management Services,2009,38379.49718822362
+Michigan,Administrative and Support and Waste Management Services,2010,38010.71866726932
+Michigan,Administrative and Support and Waste Management Services,2011,41223.58768574832
+Michigan,Administrative and Support and Waste Management Services,2012,41345.76513784305
+Michigan,Administrative and Support and Waste Management Services,2013,47700.796597987544
+Michigan,Administrative and Support and Waste Management Services,2014,46711.0644425777
+Michigan,Administrative and Support and Waste Management Services,2015,49764.06367149201
+Michigan,Administrative and Support and Waste Management Services,2016,52076.27494456762
+Michigan,Administrative and Support and Waste Management Services,2017,54025.82874546094
+Michigan,Administrative and Support and Waste Management Services,2018,56461.6967467525
+Michigan,Administrative and Support and Waste Management Services,2019,60764.3933792162
+Michigan,Administrative and Support and Waste Management Services,2020,72468.09189534142
+Michigan,Administrative and Support and Waste Management Services,2021,65779.7345982947
+Michigan,Administrative and Support and Waste Management Services,2022,72847.59162008017
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2007,17723.833855282675
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2008,18090.183836281652
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2009,16514.953271028036
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2010,17101.69949174079
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2011,19824
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2012,19928.71786784419
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2013,24836.95508586526
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2014,23433.965968586388
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2015,20039.15547024952
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2016,18978.108288770054
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2017,19818.37621115937
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2018,19830.19026772184
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2019,21482.78603525752
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2020,24632.908704883226
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2021,27162.77602523659
+Michigan,"Agriculture, Forestry, Fishing, and Hunting",2022,35058.072959267134
+Michigan,"Arts, Entertainment, and Recreation",2007,16906.592419615594
+Michigan,"Arts, Entertainment, and Recreation",2008,16584.96110630942
+Michigan,"Arts, Entertainment, and Recreation",2009,17423.958697934897
+Michigan,"Arts, Entertainment, and Recreation",2010,17843.8855160451
+Michigan,"Arts, Entertainment, and Recreation",2011,17903.783231083846
+Michigan,"Arts, Entertainment, and Recreation",2012,20943.511705685618
+Michigan,"Arts, Entertainment, and Recreation",2013,18708.98394021307
+Michigan,"Arts, Entertainment, and Recreation",2014,19352.61012697915
+Michigan,"Arts, Entertainment, and Recreation",2015,20072.13318811265
+Michigan,"Arts, Entertainment, and Recreation",2016,20791.2343470483
+Michigan,"Arts, Entertainment, and Recreation",2017,22874.465049928673
+Michigan,"Arts, Entertainment, and Recreation",2018,20083.85447394297
+Michigan,"Arts, Entertainment, and Recreation",2019,20629.430656934306
+Michigan,"Arts, Entertainment, and Recreation",2020,17369.84754376059
+Michigan,"Arts, Entertainment, and Recreation",2021,19263.52003862868
+Michigan,"Arts, Entertainment, and Recreation",2022,23473.005358012666
+Michigan,Construction,2007,70934.91859782928
+Michigan,Construction,2008,58770.92571428572
+Michigan,Construction,2009,49358.84476534296
+Michigan,Construction,2010,47077.611940298506
+Michigan,Construction,2011,45834.62343562108
+Michigan,Construction,2012,50779.81612144537
+Michigan,Construction,2013,53316.71059343649
+Michigan,Construction,2014,58356.947589443786
+Michigan,Construction,2015,66831.78279097624
+Michigan,Construction,2016,73857.99868588877
+Michigan,Construction,2017,76667.11238934747
+Michigan,Construction,2018,81786.2651474046
+Michigan,Construction,2019,90182.60024975719
+Michigan,Construction,2020,117801.56806156806
+Michigan,Construction,2021,97656.8932397488
+Michigan,Construction,2022,108293.205202214
+Michigan,Educational Services,2007,15796.28128483129
+Michigan,Educational Services,2008,16990.27969695526
+Michigan,Educational Services,2009,18957.61758814586
+Michigan,Educational Services,2010,19869.901327635464
+Michigan,Educational Services,2011,20048.576226635516
+Michigan,Educational Services,2012,20289.03241650295
+Michigan,Educational Services,2013,20890.263889218782
+Michigan,Educational Services,2014,20866.032513896316
+Michigan,Educational Services,2015,21352.491702009956
+Michigan,Educational Services,2016,21362.2743723397
+Michigan,Educational Services,2017,21867.48088880965
+Michigan,Educational Services,2018,22798.171830366955
+Michigan,Educational Services,2019,23661.74741791922
+Michigan,Educational Services,2020,29803.184765882612
+Michigan,Educational Services,2021,23953.811971182982
+Michigan,Educational Services,2022,25401.37332248033
+Michigan,Finance and Insurance,2007,88851.86852769021
+Michigan,Finance and Insurance,2008,75732.76730827372
+Michigan,Finance and Insurance,2009,82391.27910045927
+Michigan,Finance and Insurance,2010,88356.1038961039
+Michigan,Finance and Insurance,2011,86587.36038294963
+Michigan,Finance and Insurance,2012,100918.88595912985
+Michigan,Finance and Insurance,2013,102921.92089802769
+Michigan,Finance and Insurance,2014,114316.19479048697
+Michigan,Finance and Insurance,2015,117901.60273533496
+Michigan,Finance and Insurance,2016,132230.30161449412
+Michigan,Finance and Insurance,2017,132697.86368260428
+Michigan,Finance and Insurance,2018,131505.47771989278
+Michigan,Finance and Insurance,2019,143562.86507009345
+Michigan,Finance and Insurance,2020,205894.00843881856
+Michigan,Finance and Insurance,2021,179633.91403049894
+Michigan,Finance and Insurance,2022,172207.0450642781
+Michigan,Health Care and Social Assistance,2007,116271.6355120819
+Michigan,Health Care and Social Assistance,2008,122568.89517189923
+Michigan,Health Care and Social Assistance,2009,125941.16991643453
+Michigan,Health Care and Social Assistance,2010,129927.80135662587
+Michigan,Health Care and Social Assistance,2011,132593.9019418915
+Michigan,Health Care and Social Assistance,2012,137431.0027598896
+Michigan,Health Care and Social Assistance,2013,141483.42078217125
+Michigan,Health Care and Social Assistance,2014,142827.6020579551
+Michigan,Health Care and Social Assistance,2015,148184.43779841546
+Michigan,Health Care and Social Assistance,2016,159846.11853232543
+Michigan,Health Care and Social Assistance,2017,164176.43588583302
+Michigan,Health Care and Social Assistance,2018,169261.17516555177
+Michigan,Health Care and Social Assistance,2019,176485.36951501155
+Michigan,Health Care and Social Assistance,2020,218983.30086278875
+Michigan,Health Care and Social Assistance,2021,179980.7296064854
+Michigan,Health Care and Social Assistance,2022,191244.12872467222
+Michigan,Information,2007,51751.13019891501
+Michigan,Information,2008,54630.14726058721
+Michigan,Information,2009,54243.33871618894
+Michigan,Information,2010,48764.91450284991
+Michigan,Information,2011,55942.62930557094
+Michigan,Information,2012,50486.05200945627
+Michigan,Information,2013,54851.888471425744
+Michigan,Information,2014,53369.57831325302
+Michigan,Information,2015,57488.294062205474
+Michigan,Information,2016,58909.08245793437
+Michigan,Information,2017,56225.45387180438
+Michigan,Information,2018,54291.58072379524
+Michigan,Information,2019,60258.82352941176
+Michigan,Information,2020,82367.78464254193
+Michigan,Information,2021,61092.10577864839
+Michigan,Information,2022,65548.5927880387
+Michigan,Management of Companies and Enterprises,2007,25680.68181818182
+Michigan,Management of Companies and Enterprises,2008,29792.95774647887
+Michigan,Management of Companies and Enterprises,2009,20263.15789473684
+Michigan,Management of Companies and Enterprises,2010,27763.953488372095
+Michigan,Management of Companies and Enterprises,2011,21376.923076923078
+Michigan,Management of Companies and Enterprises,2012,23484.805653710246
+Michigan,Management of Companies and Enterprises,2013,22746.58753709199
+Michigan,Management of Companies and Enterprises,2014,37703.68098159509
+Michigan,Management of Companies and Enterprises,2015,23195.1871657754
+Michigan,Management of Companies and Enterprises,2016,31745.454545454548
+Michigan,Management of Companies and Enterprises,2017,34370.812603648425
+Michigan,Management of Companies and Enterprises,2018,36467.32804232804
+Michigan,Management of Companies and Enterprises,2019,40158.41584158416
+Michigan,Management of Companies and Enterprises,2020,52314.666666666664
+Michigan,Management of Companies and Enterprises,2021,46322.97794117647
+Michigan,Management of Companies and Enterprises,2022,39360.992907801425
+Michigan,Manufacturing,2007,363864.9187351558
+Michigan,Manufacturing,2008,337938.46782802243
+Michigan,Manufacturing,2009,289200.0148617854
+Michigan,Manufacturing,2010,307380.22176963114
+Michigan,Manufacturing,2011,328215.2387924071
+Michigan,Manufacturing,2012,341360.8632698405
+Michigan,Manufacturing,2013,363160.1043244153
+Michigan,Manufacturing,2014,375008.0097087379
+Michigan,Manufacturing,2015,391419.6415052871
+Michigan,Manufacturing,2016,408774.4046749452
+Michigan,Manufacturing,2017,425630.23266867886
+Michigan,Manufacturing,2018,464031.5586791181
+Michigan,Manufacturing,2019,461567.2282725258
+Michigan,Manufacturing,2020,530608.9136751335
+Michigan,Manufacturing,2021,469088.42682622786
+Michigan,Manufacturing,2022,514605.91505974205
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2007,14705.2977412731
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2008,14334.049409237381
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2009,11537.315748642359
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2010,14040.85436893204
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2011,14465.61717352415
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2012,11952.162930217872
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2013,8774.221136224802
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2014,12598.746666666668
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2015,7743.173431734317
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2016,6764.2170329670325
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2017,8628.906823184152
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2018,9866.807268007788
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2019,7796.166134185304
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2020,7317.825311942959
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2021,13008.973697782361
+Michigan,"Mining, Quarrying, and Oil and Gas Extraction",2022,16534.358974358973
+Michigan,"Other Services, Except Public Administration",2007,36558.1468476495
+Michigan,"Other Services, Except Public Administration",2008,36452.66784899924
+Michigan,"Other Services, Except Public Administration",2009,34074.45380695292
+Michigan,"Other Services, Except Public Administration",2010,33597.989597919586
+Michigan,"Other Services, Except Public Administration",2011,32625.353210562214
+Michigan,"Other Services, Except Public Administration",2012,33983.072622958854
+Michigan,"Other Services, Except Public Administration",2013,35192.03363260652
+Michigan,"Other Services, Except Public Administration",2014,36327.60290556901
+Michigan,"Other Services, Except Public Administration",2015,38566.03233652883
+Michigan,"Other Services, Except Public Administration",2016,39766.42535172791
+Michigan,"Other Services, Except Public Administration",2017,41542.96097760414
+Michigan,"Other Services, Except Public Administration",2018,44577.43036837376
+Michigan,"Other Services, Except Public Administration",2019,47157.58505426073
+Michigan,"Other Services, Except Public Administration",2020,55045.04708097929
+Michigan,"Other Services, Except Public Administration",2021,48036.134282807725
+Michigan,"Other Services, Except Public Administration",2022,52271.655575173165
+Michigan,"Professional, Scientific, and Technical Services",2007,78257.28137776331
+Michigan,"Professional, Scientific, and Technical Services",2008,84055.5520713564
+Michigan,"Professional, Scientific, and Technical Services",2009,79027.04195051991
+Michigan,"Professional, Scientific, and Technical Services",2010,77178.38391829688
+Michigan,"Professional, Scientific, and Technical Services",2011,87756.121805571
+Michigan,"Professional, Scientific, and Technical Services",2012,90991.22212814
+Michigan,"Professional, Scientific, and Technical Services",2013,90091.74641937827
+Michigan,"Professional, Scientific, and Technical Services",2014,92938.53777416734
+Michigan,"Professional, Scientific, and Technical Services",2015,95100.24955326883
+Michigan,"Professional, Scientific, and Technical Services",2016,95069.61352086042
+Michigan,"Professional, Scientific, and Technical Services",2017,103898.77539503387
+Michigan,"Professional, Scientific, and Technical Services",2018,109219.86125525755
+Michigan,"Professional, Scientific, and Technical Services",2019,108603.39279288541
+Michigan,"Professional, Scientific, and Technical Services",2020,150750.26743330882
+Michigan,"Professional, Scientific, and Technical Services",2021,130099.39732547011
+Michigan,"Professional, Scientific, and Technical Services",2022,135764.66965285552
+Michigan,Real Estate and Rental and Leasing,2007,199750
+Michigan,Real Estate and Rental and Leasing,2008,187440.93904448106
+Michigan,Real Estate and Rental and Leasing,2009,174507.29613733906
+Michigan,Real Estate and Rental and Leasing,2010,165790.73359073358
+Michigan,Real Estate and Rental and Leasing,2011,188958.68852459016
+Michigan,Real Estate and Rental and Leasing,2012,212634.4827586207
+Michigan,Real Estate and Rental and Leasing,2013,202198.78296146044
+Michigan,Real Estate and Rental and Leasing,2014,186480.11310084825
+Michigan,Real Estate and Rental and Leasing,2015,180644.76021314386
+Michigan,Real Estate and Rental and Leasing,2016,247932.17612193056
+Michigan,Real Estate and Rental and Leasing,2017,191688.48167539266
+Michigan,Real Estate and Rental and Leasing,2018,188674.33251781724
+Michigan,Real Estate and Rental and Leasing,2019,207284.30564362713
+Michigan,Real Estate and Rental and Leasing,2020,266349.42148760334
+Michigan,Real Estate and Rental and Leasing,2021,226521.77906695675
+Michigan,Real Estate and Rental and Leasing,2022,241142.5273522976
+Michigan,Retail Trade,2007,105009.91520524185
+Michigan,Retail Trade,2008,101379.55770559779
+Michigan,Retail Trade,2009,98626.46630193277
+Michigan,Retail Trade,2010,95130.66243366187
+Michigan,Retail Trade,2011,98919.4768402663
+Michigan,Retail Trade,2012,101242.26270910022
+Michigan,Retail Trade,2013,107004.11885245903
+Michigan,Retail Trade,2014,110744.67674049542
+Michigan,Retail Trade,2015,117678.9730609293
+Michigan,Retail Trade,2016,118807.5223319229
+Michigan,Retail Trade,2017,125555.79023053072
+Michigan,Retail Trade,2018,128417.80415430266
+Michigan,Retail Trade,2019,135055.09285186263
+Michigan,Retail Trade,2020,182899.87850438905
+Michigan,Retail Trade,2021,168068.99190852715
+Michigan,Retail Trade,2022,165372.64139060336
+Michigan,Transportation and Warehousing,2007,39439.24896190648
+Michigan,Transportation and Warehousing,2008,40756.82613768961
+Michigan,Transportation and Warehousing,2009,36361.25994272988
+Michigan,Transportation and Warehousing,2010,38356.93706383251
+Michigan,Transportation and Warehousing,2011,40574.766055633896
+Michigan,Transportation and Warehousing,2012,41884.68966393495
+Michigan,Transportation and Warehousing,2013,43483.198482932996
+Michigan,Transportation and Warehousing,2014,46106.84156688128
+Michigan,Transportation and Warehousing,2015,49506.49856151633
+Michigan,Transportation and Warehousing,2016,50428.70637919538
+Michigan,Transportation and Warehousing,2017,50533.49618003223
+Michigan,Transportation and Warehousing,2018,53708.23151125402
+Michigan,Transportation and Warehousing,2019,55044.39890710383
+Michigan,Transportation and Warehousing,2020,65158.809130003305
+Michigan,Transportation and Warehousing,2021,59980.57953756078
+Michigan,Transportation and Warehousing,2022,74077.27004046741
+Michigan,Utilities,2007,26795.46279491833
+Michigan,Utilities,2008,28062.816314379277
+Michigan,Utilities,2009,26020.653442240375
+Michigan,Utilities,2010,29430.01158748552
+Michigan,Utilities,2011,29219.010494752623
+Michigan,Utilities,2012,30686.911630731855
+Michigan,Utilities,2013,31276.805437553103
+Michigan,Utilities,2014,29818.926634313448
+Michigan,Utilities,2015,32088.02308802309
+Michigan,Utilities,2016,34585.351952123114
+Michigan,Utilities,2017,31844.6492434663
+Michigan,Utilities,2018,38228.523301516005
+Michigan,Utilities,2019,36579.59635056677
+Michigan,Utilities,2020,47451.369150779894
+Michigan,Utilities,2021,39208.20120284308
+Michigan,Utilities,2022,50867.93796084414
+Michigan,Wholesale Trade,2007,86584.2640776699
+Michigan,Wholesale Trade,2008,86499.93698802772
+Michigan,Wholesale Trade,2009,73245.80634446106
+Michigan,Wholesale Trade,2010,82515.20161970642
+Michigan,Wholesale Trade,2011,82931.80171423522
+Michigan,Wholesale Trade,2012,89382.44972577697
+Michigan,Wholesale Trade,2013,86061.01911915331
+Michigan,Wholesale Trade,2014,90275.6743298199
+Michigan,Wholesale Trade,2015,101490.40685581164
+Michigan,Wholesale Trade,2016,101473.7757244855
+Michigan,Wholesale Trade,2017,106593.3153919611
+Michigan,Wholesale Trade,2018,112109.37637823058
+Michigan,Wholesale Trade,2019,114619.75204520537
+Michigan,Wholesale Trade,2020,149667.06748466258
+Michigan,Wholesale Trade,2021,123800.09964129135
+Michigan,Wholesale Trade,2022,130750.4176083325
+New York,Accommodation and Food Services,2007,81794.08630793821
+New York,Accommodation and Food Services,2008,80030.5298642925
+New York,Accommodation and Food Services,2009,79905.67741935483
+New York,Accommodation and Food Services,2010,82054.80355726274
+New York,Accommodation and Food Services,2011,90681.96368749741
+New York,Accommodation and Food Services,2012,94429.23561859732
+New York,Accommodation and Food Services,2013,101719.76521771743
+New York,Accommodation and Food Services,2014,103182.62038981615
+New York,Accommodation and Food Services,2015,113394.15994078877
+New York,Accommodation and Food Services,2016,118581.16973757677
+New York,Accommodation and Food Services,2017,119855.17457008858
+New York,Accommodation and Food Services,2018,126617.8337017514
+New York,Accommodation and Food Services,2019,133148.57569687298
+New York,Accommodation and Food Services,2020,102738.644470868
+New York,Accommodation and Food Services,2021,128700.81099436698
+New York,Accommodation and Food Services,2022,151128.21142552054
+New York,Administrative and Support and Waste Management Services,2007,79699.44855413584
+New York,Administrative and Support and Waste Management Services,2008,83960.29517403513
+New York,Administrative and Support and Waste Management Services,2009,74113.0731061859
+New York,Administrative and Support and Waste Management Services,2010,78793.05223736037
+New York,Administrative and Support and Waste Management Services,2011,84387.10890964951
+New York,Administrative and Support and Waste Management Services,2012,88395.41352915551
+New York,Administrative and Support and Waste Management Services,2013,93082.60062290369
+New York,Administrative and Support and Waste Management Services,2014,96625.35101404054
+New York,Administrative and Support and Waste Management Services,2015,96193.90391602746
+New York,Administrative and Support and Waste Management Services,2016,100008.63578013772
+New York,Administrative and Support and Waste Management Services,2017,112253.6663933466
+New York,Administrative and Support and Waste Management Services,2018,113474.06023680881
+New York,Administrative and Support and Waste Management Services,2019,121452.54536146976
+New York,Administrative and Support and Waste Management Services,2020,124541.59221442246
+New York,Administrative and Support and Waste Management Services,2021,128583.61354629518
+New York,Administrative and Support and Waste Management Services,2022,149290.25919024224
+New York,"Agriculture, Forestry, Fishing, and Hunting",2007,19556.50238997857
+New York,"Agriculture, Forestry, Fishing, and Hunting",2008,18268.03676725633
+New York,"Agriculture, Forestry, Fishing, and Hunting",2009,15709.345794392526
+New York,"Agriculture, Forestry, Fishing, and Hunting",2010,17171.12452350699
+New York,"Agriculture, Forestry, Fishing, and Hunting",2011,20020
+New York,"Agriculture, Forestry, Fishing, and Hunting",2012,19589.02381327866
+New York,"Agriculture, Forestry, Fishing, and Hunting",2013,26191.050198150595
+New York,"Agriculture, Forestry, Fishing, and Hunting",2014,23171.40052356021
+New York,"Agriculture, Forestry, Fishing, and Hunting",2015,21000.335892514395
+New York,"Agriculture, Forestry, Fishing, and Hunting",2016,21301.38703208556
+New York,"Agriculture, Forestry, Fishing, and Hunting",2017,21117.94186435015
+New York,"Agriculture, Forestry, Fishing, and Hunting",2018,20396.76713251389
+New York,"Agriculture, Forestry, Fishing, and Hunting",2019,19751.676460421706
+New York,"Agriculture, Forestry, Fishing, and Hunting",2020,20021.44373673036
+New York,"Agriculture, Forestry, Fishing, and Hunting",2021,28925.552050473187
+New York,"Agriculture, Forestry, Fishing, and Hunting",2022,36054.310485849826
+New York,"Arts, Entertainment, and Recreation",2007,29938.243218968924
+New York,"Arts, Entertainment, and Recreation",2008,32031.25324114088
+New York,"Arts, Entertainment, and Recreation",2009,31181.046552327618
+New York,"Arts, Entertainment, and Recreation",2010,31537.41543798786
+New York,"Arts, Entertainment, and Recreation",2011,34942.126789366055
+New York,"Arts, Entertainment, and Recreation",2012,36083.74581939799
+New York,"Arts, Entertainment, and Recreation",2013,37671.553506121796
+New York,"Arts, Entertainment, and Recreation",2014,41444.63081987772
+New York,"Arts, Entertainment, and Recreation",2015,42764.96032363467
+New York,"Arts, Entertainment, and Recreation",2016,42008.02027429934
+New York,"Arts, Entertainment, and Recreation",2017,44498.45934379458
+New York,"Arts, Entertainment, and Recreation",2018,53839.92133726647
+New York,"Arts, Entertainment, and Recreation",2019,56996.301703163015
+New York,"Arts, Entertainment, and Recreation",2020,39226.90570299266
+New York,"Arts, Entertainment, and Recreation",2021,51197.00627716079
+New York,"Arts, Entertainment, and Recreation",2022,60226.79006332197
+New York,Construction,2007,133340.8514227046
+New York,Construction,2008,125902.36190476191
+New York,Construction,2009,110848.64620938628
+New York,Construction,2010,104906.67072799269
+New York,Construction,2011,109132.28521801095
+New York,Construction,2012,113993.56852683343
+New York,Construction,2013,119678.19248427138
+New York,Construction,2014,127764.52303511878
+New York,Construction,2015,139032.95667797964
+New York,Construction,2016,145884.5591929811
+New York,Construction,2017,155562.37253949876
+New York,Construction,2018,164215.75691806836
+New York,Construction,2019,174282.50312196475
+New York,Construction,2020,182760.58682058682
+New York,Construction,2021,180513.88991503508
+New York,Construction,2022,201034.87045400523
+New York,Educational Services,2007,38089.91539163036
+New York,Educational Services,2008,43091.347024348404
+New York,Educational Services,2009,47830.06009122282
+New York,Educational Services,2010,50336.446354404245
+New York,Educational Services,2011,53864.54439252336
+New York,Educational Services,2012,56501.036345776025
+New York,Educational Services,2013,56377.42571435358
+New York,Educational Services,2014,57939.707421448
+New York,Educational Services,2015,59648.35884196939
+New York,Educational Services,2016,61069.8654769763
+New York,Educational Services,2017,62909.37618400232
+New York,Educational Services,2018,66846.00307624698
+New York,Educational Services,2019,69385.09530607105
+New York,Educational Services,2020,69126.5387997362
+New York,Educational Services,2021,72200.77653342909
+New York,Educational Services,2022,74150.31411099284
+New York,Finance and Insurance,2007,277681.4047726249
+New York,Finance and Insurance,2008,241949.72790486747
+New York,Finance and Insurance,2009,269634.90471414244
+New York,Finance and Insurance,2010,270496.51515151514
+New York,Finance and Insurance,2011,281845.9368589013
+New York,Finance and Insurance,2012,318944.7923533289
+New York,Finance and Insurance,2013,315603.0214015946
+New York,Finance and Insurance,2014,352731.14382785955
+New York,Finance and Insurance,2015,372500.71588844963
+New York,Finance and Insurance,2016,394929.8759279448
+New York,Finance and Insurance,2017,403616.2767039674
+New York,Finance and Insurance,2018,418491.68984876835
+New York,Finance and Insurance,2019,437605.3494937695
+New York,Finance and Insurance,2020,465994.1317753976
+New York,Finance and Insurance,2021,495140.05823422
+New York,Finance and Insurance,2022,501080.2803174456
+New York,Health Care and Social Assistance,2007,257850.934637543
+New York,Health Care and Social Assistance,2008,275715.10474956315
+New York,Health Care and Social Assistance,2009,294263.39832869085
+New York,Health Care and Social Assistance,2010,297032.0247072644
+New York,Health Care and Social Assistance,2011,313235.2486658761
+New York,Health Care and Social Assistance,2012,318004.34590616374
+New York,Health Care and Social Assistance,2013,325918.7537188294
+New York,Health Care and Social Assistance,2014,341057.0428387051
+New York,Health Care and Social Assistance,2015,355727.2469699355
+New York,Health Care and Social Assistance,2016,369981.1777294536
+New York,Health Care and Social Assistance,2017,377965.81695074326
+New York,Health Care and Social Assistance,2018,392457.9061481058
+New York,Health Care and Social Assistance,2019,425093.06004618935
+New York,Health Care and Social Assistance,2020,441043.08377400495
+New York,Health Care and Social Assistance,2021,454857.7267353488
+New York,Health Care and Social Assistance,2022,473618.80333730625
+New York,Information,2007,171117.76672694396
+New York,Information,2008,184436.27549620415
+New York,Information,2009,182679.9152200242
+New York,Information,2010,191713.04623179228
+New York,Information,2011,193264.0380994573
+New York,Information,2012,191863.38921126156
+New York,Information,2013,208090.22147518292
+New York,Information,2014,207006.85240963855
+New York,Information,2015,227715.60791705936
+New York,Information,2016,235364.4417588547
+New York,Information,2017,242396.2578732864
+New York,Information,2018,254272.07950496904
+New York,Information,2019,280540.64171123
+New York,Information,2020,285978.5651241962
+New York,Information,2021,318166.66013712046
+New York,Information,2022,324856.42040457344
+New York,Management of Companies and Enterprises,2007,41850
+New York,Management of Companies and Enterprises,2008,57780.28169014084
+New York,Management of Companies and Enterprises,2009,42368.42105263158
+New York,Management of Companies and Enterprises,2010,45244.96124031008
+New York,Management of Companies and Enterprises,2011,70636.78929765886
+New York,Management of Companies and Enterprises,2012,61914.48763250884
+New York,Management of Companies and Enterprises,2013,69187.53709198814
+New York,Management of Companies and Enterprises,2014,45855.8282208589
+New York,Management of Companies and Enterprises,2015,68657.7540106952
+New York,Management of Companies and Enterprises,2016,45854.545454545456
+New York,Management of Companies and Enterprises,2017,68741.62520729685
+New York,Management of Companies and Enterprises,2018,58039.550264550264
+New York,Management of Companies and Enterprises,2019,75727.29844413012
+New York,Management of Companies and Enterprises,2020,66162.66666666667
+New York,Management of Companies and Enterprises,2021,71516.17647058824
+New York,Management of Companies and Enterprises,2022,94979.78723404255
+New York,Manufacturing,2007,314911.2047687794
+New York,Manufacturing,2008,301316.2052283722
+New York,Manufacturing,2009,282143.2824730011
+New York,Manufacturing,2010,290743.19981896353
+New York,Manufacturing,2011,301690.89509289176
+New York,Manufacturing,2012,312390.51601467904
+New York,Manufacturing,2013,313756.6885411408
+New York,Manufacturing,2014,314650
+New York,Manufacturing,2015,315502.7424357127
+New York,Manufacturing,2016,303719.0357925493
+New York,Manufacturing,2017,328561.06899256125
+New York,Manufacturing,2018,332998.7147395783
+New York,Manufacturing,2019,338133.00288349256
+New York,Manufacturing,2020,316243.18117911706
+New York,Manufacturing,2021,353903.22612814757
+New York,Manufacturing,2022,399070.47202176746
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2007,11351.457905544148
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2008,12085.571070533477
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2009,8332.505818463926
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2010,9995.184466019417
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2011,12545.402504472271
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2012,9561.730344174297
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2013,9129.93280390959
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2014,10145.893333333333
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2015,6626.3695713880215
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2016,7200.618131868131
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2017,7942.5165077035945
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2018,6916.937053861129
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2019,7044.728434504792
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2020,7557.7540106951865
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2021,11810.778751933987
+New York,"Mining, Quarrying, and Oil and Gas Extraction",2022,16140.683760683762
+New York,"Other Services, Except Public Administration",2007,69651.06650594831
+New York,"Other Services, Except Public Administration",2008,69742.08766151508
+New York,"Other Services, Except Public Administration",2009,68988.82890155911
+New York,"Other Services, Except Public Administration",2010,69510.25205041008
+New York,"Other Services, Except Public Administration",2011,68565.23433693852
+New York,"Other Services, Except Public Administration",2012,73761.04545677439
+New York,"Other Services, Except Public Administration",2013,76035.34273906228
+New York,"Other Services, Except Public Administration",2014,80107.02179176756
+New York,"Other Services, Except Public Administration",2015,84849.12004578623
+New York,"Other Services, Except Public Administration",2016,83850.34831307198
+New York,"Other Services, Except Public Administration",2017,91331.54045336846
+New York,"Other Services, Except Public Administration",2018,93411.10062893083
+New York,"Other Services, Except Public Administration",2019,93286.67521406658
+New York,"Other Services, Except Public Administration",2020,96286.40301318267
+New York,"Other Services, Except Public Administration",2021,99351.94303153612
+New York,"Other Services, Except Public Administration",2022,113694.58101317399
+New York,"Professional, Scientific, and Technical Services",2007,220225.6159774232
+New York,"Professional, Scientific, and Technical Services",2008,241678.57565938472
+New York,"Professional, Scientific, and Technical Services",2009,227322.87558264614
+New York,"Professional, Scientific, and Technical Services",2010,238544.40448791717
+New York,"Professional, Scientific, and Technical Services",2011,255199.31753273247
+New York,"Professional, Scientific, and Technical Services",2012,262882.2184589331
+New York,"Professional, Scientific, and Technical Services",2013,270355.21417728206
+New York,"Professional, Scientific, and Technical Services",2014,279310.6255077173
+New York,"Professional, Scientific, and Technical Services",2015,293367.84459917434
+New York,"Professional, Scientific, and Technical Services",2016,302580.5017137454
+New York,"Professional, Scientific, and Technical Services",2017,308605.3273137698
+New York,"Professional, Scientific, and Technical Services",2018,337258.9856339105
+New York,"Professional, Scientific, and Technical Services",2019,347649.8277900581
+New York,"Professional, Scientific, and Technical Services",2020,361017.52356756036
+New York,"Professional, Scientific, and Technical Services",2021,404126.1219316624
+New York,"Professional, Scientific, and Technical Services",2022,415755.26315789466
+New York,Real Estate and Rental and Leasing,2007,296083.3333333333
+New York,Real Estate and Rental and Leasing,2008,302789.2092257002
+New York,Real Estate and Rental and Leasing,2009,325746.9527896996
+New York,Real Estate and Rental and Leasing,2010,260252.89575289574
+New York,Real Estate and Rental and Leasing,2011,260942.95081967214
+New York,Real Estate and Rental and Leasing,2012,292372.4137931034
+New York,Real Estate and Rental and Leasing,2013,368451.1156186613
+New York,Real Estate and Rental and Leasing,2014,347238.8312912347
+New York,Real Estate and Rental and Leasing,2015,294845.4706927176
+New York,Real Estate and Rental and Leasing,2016,268422.4386113463
+New York,Real Estate and Rental and Leasing,2017,345920.5933682373
+New York,Real Estate and Rental and Leasing,2018,564310.3712371024
+New York,Real Estate and Rental and Leasing,2019,583302.1876981611
+New York,Real Estate and Rental and Leasing,2020,659094.5454545454
+New York,Real Estate and Rental and Leasing,2021,665122.6734348562
+New York,Real Estate and Rental and Leasing,2022,714665.6892778993
+New York,Retail Trade,2007,186437.62767392563
+New York,Retail Trade,2008,180419.9170697996
+New York,Retail Trade,2009,176374.34598752897
+New York,Retail Trade,2010,184717.15077710387
+New York,Retail Trade,2011,191914.6324189055
+New York,Retail Trade,2012,203323.5496947952
+New York,Retail Trade,2013,205509.47404371583
+New York,Retail Trade,2014,220435.53439591525
+New York,Retail Trade,2015,224215.58488519254
+New York,Retail Trade,2016,238071.70394250788
+New York,Retail Trade,2017,244092.11117602122
+New York,Retail Trade,2018,249000.59347181008
+New York,Retail Trade,2019,260465.43760220424
+New York,Retail Trade,2020,283156.7080764207
+New York,Retail Trade,2021,312709.54148320615
+New York,Retail Trade,2022,327154.6857286812
+New York,Transportation and Warehousing,2007,95321.89925979418
+New York,Transportation and Warehousing,2008,98454.1423570595
+New York,Transportation and Warehousing,2009,93103.35348393254
+New York,Transportation and Warehousing,2010,102386.93258211153
+New York,Transportation and Warehousing,2011,109311.1460069222
+New York,Transportation and Warehousing,2012,110860.62511911569
+New York,Transportation and Warehousing,2013,117181.4032869785
+New York,Transportation and Warehousing,2014,123775.67844033937
+New York,Transportation and Warehousing,2015,134290.08292435267
+New York,Transportation and Warehousing,2016,136341.79817737275
+New York,Transportation and Warehousing,2017,141295.6187308352
+New York,Transportation and Warehousing,2018,147756.27009646303
+New York,Transportation and Warehousing,2019,152593.18891491022
+New York,Transportation and Warehousing,2020,139529.43433675158
+New York,Transportation and Warehousing,2021,150894.05577056666
+New York,Transportation and Warehousing,2022,183401.6550720684
+New York,Utilities,2007,41455.80762250454
+New York,Utilities,2008,42022.268532301285
+New York,Utilities,2009,44821.703617269544
+New York,Utilities,2010,49319.52491309386
+New York,Utilities,2011,50484.917541229384
+New York,Utilities,2012,49440.02429395688
+New York,Utilities,2013,48299.85839705466
+New York,Utilities,2014,53998.74393377105
+New York,Utilities,2015,56370.85137085137
+New York,Utilities,2016,51532.174408663435
+New York,Utilities,2017,53333.31499312242
+New York,Utilities,2018,58647.05221785514
+New York,Utilities,2019,60782.637544926736
+New York,Utilities,2020,61830.571923743504
+New York,Utilities,2021,73074.68562055768
+New York,Utilities,2022,70831.62979913552
+New York,Wholesale Trade,2007,164988.90873786408
+New York,Wholesale Trade,2008,170357.5929426591
+New York,Wholesale Trade,2009,156649.28583291813
+New York,Wholesale Trade,2010,173192.07018727856
+New York,Wholesale Trade,2011,174619.35141822038
+New York,Wholesale Trade,2012,199012.76051188298
+New York,Wholesale Trade,2013,200423.38682144077
+New York,Wholesale Trade,2014,206020.69051373558
+New York,Wholesale Trade,2015,229165.72094184207
+New York,Wholesale Trade,2016,217827.81184376313
+New York,Wholesale Trade,2017,223192.5167115201
+New York,Wholesale Trade,2018,224542.14518832142
+New York,Wholesale Trade,2019,249582.32267858647
+New York,Wholesale Trade,2020,245664.8343558282
+New York,Wholesale Trade,2021,259867.40733359905
+New York,Wholesale Trade,2022,271847.9905669647
+Texas,Accommodation and Food Services,2007,103816.92416977446
+Texas,Accommodation and Food Services,2008,107231.23865502636
+Texas,Accommodation and Food Services,2009,104519.03225806452
+Texas,Accommodation and Food Services,2010,110816.97632666695
+Texas,Accommodation and Food Services,2011,111352.76066007694
+Texas,Accommodation and Food Services,2012,123678.48699763593
+Texas,Accommodation and Food Services,2013,128117.99872482465
+Texas,Accommodation and Food Services,2014,137384.75000921116
+Texas,Accommodation and Food Services,2015,149233.8667042611
+Texas,Accommodation and Food Services,2016,161151.3993579006
+Texas,Accommodation and Food Services,2017,172125.5862428348
+Texas,Accommodation and Food Services,2018,182980.4931134161
+Texas,Accommodation and Food Services,2019,190547.82195362102
+Texas,Accommodation and Food Services,2020,124668.99524375742
+Texas,Accommodation and Food Services,2021,198418.3612320722
+Texas,Accommodation and Food Services,2022,232713.98825413777
+Texas,Administrative and Support and Waste Management Services,2007,119071.14996637526
+Texas,Administrative and Support and Waste Management Services,2008,122014.65421537256
+Texas,Administrative and Support and Waste Management Services,2009,113338.17399933841
+Texas,Administrative and Support and Waste Management Services,2010,126815.52269645508
+Texas,Administrative and Support and Waste Management Services,2011,124298.38861370618
+Texas,Administrative and Support and Waste Management Services,2012,133524.06496981764
+Texas,Administrative and Support and Waste Management Services,2013,138288.2786296119
+Texas,Administrative and Support and Waste Management Services,2014,145077.97311892474
+Texas,Administrative and Support and Waste Management Services,2015,155898.31593517502
+Texas,Administrative and Support and Waste Management Services,2016,161351.61629128252
+Texas,Administrative and Support and Waste Management Services,2017,174401.0249502167
+Texas,Administrative and Support and Waste Management Services,2018,187777.35946660535
+Texas,Administrative and Support and Waste Management Services,2019,193424.4240941926
+Texas,Administrative and Support and Waste Management Services,2020,159636.85386088068
+Texas,Administrative and Support and Waste Management Services,2021,217237.46247147833
+Texas,Administrative and Support and Waste Management Services,2022,255770.73239595685
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2007,37907.30179660458
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2008,34909.98959417274
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2009,29955.878012788984
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2010,35082.782719186784
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2011,42616
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2012,40055.5906008516
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2013,50849.834874504624
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2014,44176.63612565445
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2015,40660.84452975048
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2016,34933.1550802139
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2017,39695.82358837287
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2018,39928.75905034517
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2019,37176.28759073626
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2020,32433.970276008495
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2021,44029.33753943217
+Texas,"Agriculture, Forestry, Fishing, and Hunting",2022,62905.283821364304
+Texas,"Arts, Entertainment, and Recreation",2007,26556.924735045806
+Texas,"Arts, Entertainment, and Recreation",2008,26412.16940363008
+Texas,"Arts, Entertainment, and Recreation",2009,27387.73188659433
+Texas,"Arts, Entertainment, and Recreation",2010,30480
+Texas,"Arts, Entertainment, and Recreation",2011,30344.47852760736
+Texas,"Arts, Entertainment, and Recreation",2012,33297.023411371236
+Texas,"Arts, Entertainment, and Recreation",2013,35811.92558435363
+Texas,"Arts, Entertainment, and Recreation",2014,37026.22668129801
+Texas,"Arts, Entertainment, and Recreation",2015,35706.95503345262
+Texas,"Arts, Entertainment, and Recreation",2016,41825.64102564102
+Texas,"Arts, Entertainment, and Recreation",2017,44071.469329529245
+Texas,"Arts, Entertainment, and Recreation",2018,43049.596853490664
+Texas,"Arts, Entertainment, and Recreation",2019,45712.41849148419
+Texas,"Arts, Entertainment, and Recreation",2020,28708.498023715416
+Texas,"Arts, Entertainment, and Recreation",2021,40130.178657653305
+Texas,"Arts, Entertainment, and Recreation",2022,55362.3185582075
+Texas,Construction,2007,215009.1705778821
+Texas,Construction,2008,208344.91047619047
+Texas,Construction,2009,189781.04693140794
+Texas,Construction,2010,178908.65062442888
+Texas,Construction,2011,175590.1483098027
+Texas,Construction,2012,186319.213170836
+Texas,Construction,2013,196000.21679986396
+Texas,Construction,2014,216758.19918481619
+Texas,Construction,2015,239937.52445597926
+Texas,Construction,2016,272914.31221736944
+Texas,Construction,2017,293299.56299256714
+Texas,Construction,2018,307269.3579309098
+Texas,Construction,2019,326944.98404329125
+Texas,Construction,2020,279001.2890812891
+Texas,Construction,2021,335576.4425563355
+Texas,Construction,2022,391815.5624978777
+Texas,Educational Services,2007,41985.25686493059
+Texas,Educational Services,2008,46145.599656930484
+Texas,Educational Services,2009,53698.11038443902
+Texas,Educational Services,2010,57980.553621587875
+Texas,Educational Services,2011,57941.54010903427
+Texas,Educational Services,2012,60425.23084479371
+Texas,Educational Services,2013,62165.67302439372
+Texas,Educational Services,2014,64767.83031374282
+Texas,Educational Services,2015,64553.30075603909
+Texas,Educational Services,2016,71892.1630664876
+Texas,Educational Services,2017,69275.30366177093
+Texas,Educational Services,2018,73684.32432432433
+Texas,Educational Services,2019,77414.20144428583
+Texas,Educational Services,2020,61726.64321828974
+Texas,Educational Services,2021,74885.20322283816
+Texas,Educational Services,2022,88173.48110116253
+Texas,Finance and Insurance,2007,267534.2638451148
+Texas,Finance and Insurance,2008,237691.13171419932
+Texas,Finance and Insurance,2009,270860.0538457477
+Texas,Finance and Insurance,2010,281944.11255411257
+Texas,Finance and Insurance,2011,281671.1306131753
+Texas,Finance and Insurance,2012,332113.71127224783
+Texas,Finance and Insurance,2013,330608.6865295845
+Texas,Finance and Insurance,2014,374113.0237825595
+Texas,Finance and Insurance,2015,411281.2052569719
+Texas,Finance and Insurance,2016,437807.10169755487
+Texas,Finance and Insurance,2017,441968.26042726345
+Texas,Finance and Insurance,2018,481735.3902179961
+Texas,Finance and Insurance,2019,504118.78894080996
+Texas,Finance and Insurance,2020,448817.7085361896
+Texas,Finance and Insurance,2021,558901.8407935646
+Texas,Finance and Insurance,2022,640229.3219473709
+Texas,Health Care and Social Assistance,2007,220801.60193973558
+Texas,Health Care and Social Assistance,2008,241323.11558775598
+Texas,Health Care and Social Assistance,2009,258058.16155988857
+Texas,Health Care and Social Assistance,2010,269444.75917996134
+Texas,Health Care and Social Assistance,2011,277609.8261932997
+Texas,Health Care and Social Assistance,2012,290606.10119595216
+Texas,Health Care and Social Assistance,2013,300329.9075025694
+Texas,Health Care and Social Assistance,2014,311593.23562171817
+Texas,Health Care and Social Assistance,2015,331100.3375483149
+Texas,Health Care and Social Assistance,2016,352046.98491595045
+Texas,Health Care and Social Assistance,2017,376412.33009871456
+Texas,Health Care and Social Assistance,2018,387943.93088843324
+Texas,Health Care and Social Assistance,2019,403075.65160013194
+Texas,Health Care and Social Assistance,2020,329978.6251043696
+Texas,Health Care and Social Assistance,2021,416694.1969261949
+Texas,Health Care and Social Assistance,2022,480001.48748510133
+Texas,Information,2007,157812.1609403255
+Texas,Information,2008,157019.15302295802
+Texas,Information,2009,153337.54541784417
+Texas,Information,2010,162629.3962423475
+Texas,Information,2011,152616.90109646693
+Texas,Information,2012,155883.8813668601
+Texas,Information,2013,171246.934941665
+Texas,Information,2014,169536.2951807229
+Texas,Information,2015,183394.54288407162
+Texas,Information,2016,201197.17393325278
+Texas,Information,2017,204600.77806595035
+Texas,Information,2018,199882.85205325333
+Texas,Information,2019,214066.3101604278
+Texas,Information,2020,190056.58807212207
+Texas,Information,2021,242058.21743388835
+Texas,Information,2022,269049.9120492524
+Texas,Management of Companies and Enterprises,2007,88455.68181818182
+Texas,Management of Companies and Enterprises,2008,76739.4366197183
+Texas,Management of Companies and Enterprises,2009,94868.42105263159
+Texas,Management of Companies and Enterprises,2010,99744.57364341085
+Texas,Management of Companies and Enterprises,2011,90154.84949832776
+Texas,Management of Companies and Enterprises,2012,104614.13427561837
+Texas,Management of Companies and Enterprises,2013,121315.13353115728
+Texas,Management of Companies and Enterprises,2014,121263.19018404908
+Texas,Management of Companies and Enterprises,2015,146593.58288770056
+Texas,Management of Companies and Enterprises,2016,143207.2727272727
+Texas,Management of Companies and Enterprises,2017,139938.30845771145
+Texas,Management of Companies and Enterprises,2018,125837.96296296296
+Texas,Management of Companies and Enterprises,2019,131375.3889674682
+Texas,Management of Companies and Enterprises,2020,130017.33333333334
+Texas,Management of Companies and Enterprises,2021,165787.5
+Texas,Management of Companies and Enterprises,2022,176268.79432624116
+Texas,Manufacturing,2007,456915.6568714199
+Texas,Manufacturing,2008,456592.96372845175
+Texas,Manufacturing,2009,442263.9007232736
+Texas,Manufacturing,2010,469433.80855397147
+Texas,Manufacturing,2011,479131.2298061389
+Texas,Manufacturing,2012,490625.3014454403
+Texas,Manufacturing,2013,507770.4862863874
+Texas,Manufacturing,2014,504888.59223300975
+Texas,Manufacturing,2015,530103.2772473077
+Texas,Manufacturing,2016,505801.95763330895
+Texas,Manufacturing,2017,526259.2675333318
+Texas,Manufacturing,2018,576718.7157023202
+Texas,Manufacturing,2019,589921.5213402283
+Texas,Manufacturing,2020,450691.8642796888
+Texas,Manufacturing,2021,607875.1832460733
+Texas,Manufacturing,2022,732656.0392759967
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2007,257987.67967145788
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2008,323078.23129251704
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2009,226580.06206361522
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2010,253330.3300970874
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2011,291872.6296958855
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2012,305406.2203978529
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2013,333064.69150885765
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2014,360792.42666666664
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2015,226041.10133409026
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2016,180306.38736263735
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2017,230332.97872340426
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2018,271693.21868916287
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2019,257743.13099041535
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2020,168549.91087344027
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2021,279692.9345023208
+Texas,"Mining, Quarrying, and Oil and Gas Extraction",2022,389344.7863247863
+Texas,"Other Services, Except Public Administration",2007,91222.1057596562
+Texas,"Other Services, Except Public Administration",2008,91483.14162655182
+Texas,"Other Services, Except Public Administration",2009,90645.62288712851
+Texas,"Other Services, Except Public Administration",2010,91980.03600720144
+Texas,"Other Services, Except Public Administration",2011,94935.22849069473
+Texas,"Other Services, Except Public Administration",2012,95504.74182317461
+Texas,"Other Services, Except Public Administration",2013,102185.33561351005
+Texas,"Other Services, Except Public Administration",2014,109074.12999097945
+Texas,"Other Services, Except Public Administration",2015,112599.72814422664
+Texas,"Other Services, Except Public Administration",2016,118693.31147839548
+Texas,"Other Services, Except Public Administration",2017,123330.050424749
+Texas,"Other Services, Except Public Administration",2018,131388.27493261456
+Texas,"Other Services, Except Public Administration",2019,143267.1505105545
+Texas,"Other Services, Except Public Administration",2020,110712.39171374765
+Texas,"Other Services, Except Public Administration",2021,143343.96744659208
+Texas,"Other Services, Except Public Administration",2022,162708.5834578297
+Texas,"Professional, Scientific, and Technical Services",2007,233809.22609356343
+Texas,"Professional, Scientific, and Technical Services",2008,267483.781052925
+Texas,"Professional, Scientific, and Technical Services",2009,256338.88490498392
+Texas,"Professional, Scientific, and Technical Services",2010,263325.7515822785
+Texas,"Professional, Scientific, and Technical Services",2011,266571.2399391714
+Texas,"Professional, Scientific, and Technical Services",2012,298580.7154953429
+Texas,"Professional, Scientific, and Technical Services",2013,302185.23199788795
+Texas,"Professional, Scientific, and Technical Services",2014,325305.507717303
+Texas,"Professional, Scientific, and Technical Services",2015,339774.43773491896
+Texas,"Professional, Scientific, and Technical Services",2016,348382.2686443683
+Texas,"Professional, Scientific, and Technical Services",2017,364696.65349887137
+Texas,"Professional, Scientific, and Technical Services",2018,397159.25329109083
+Texas,"Professional, Scientific, and Technical Services",2019,425235.81966791756
+Texas,"Professional, Scientific, and Technical Services",2020,362583.760112322
+Texas,"Professional, Scientific, and Technical Services",2021,469614.0296422752
+Texas,"Professional, Scientific, and Technical Services",2022,583634.2385218365
+Texas,Real Estate and Rental and Leasing,2007,569500
+Texas,Real Estate and Rental and Leasing,2008,664854.6128500823
+Texas,Real Estate and Rental and Leasing,2009,624902.3175965665
+Texas,Real Estate and Rental and Leasing,2010,676657.528957529
+Texas,Real Estate and Rental and Leasing,2011,659105.9016393443
+Texas,Real Estate and Rental and Leasing,2012,664482.7586206897
+Texas,Real Estate and Rental and Leasing,2013,732408.92494929
+Texas,Real Estate and Rental and Leasing,2014,724485.9566446749
+Texas,Real Estate and Rental and Leasing,2015,786946.7140319715
+Texas,Real Estate and Rental and Leasing,2016,805267.3158340389
+Texas,Real Estate and Rental and Leasing,2017,843869.982547993
+Texas,Real Estate and Rental and Leasing,2018,727580.7467290714
+Texas,Real Estate and Rental and Leasing,2019,797110.4629042485
+Texas,Real Estate and Rental and Leasing,2020,732570.2479338844
+Texas,Real Estate and Rental and Leasing,2021,892024.5226009185
+Texas,Real Estate and Rental and Leasing,2022,1047236.6630196937
+Texas,Retail Trade,2007,235968.63075737137
+Texas,Retail Trade,2008,235669.7166551486
+Texas,Retail Trade,2009,236206.40991948778
+Texas,Retail Trade,2010,242941.20782789993
+Texas,Retail Trade,2011,246693.74380282353
+Texas,Retail Trade,2012,257214.72438376592
+Texas,Retail Trade,2013,282935.21857923496
+Texas,Retail Trade,2014,288629.3383012489
+Texas,Retail Trade,2015,317435.1202314229
+Texas,Retail Trade,2016,328439.50119775225
+Texas,Retail Trade,2017,350867.50999865186
+Texas,Retail Trade,2018,361748.36795252224
+Texas,Retail Trade,2019,381668.726059004
+Texas,Retail Trade,2020,337172.30203808885
+Texas,Retail Trade,2021,445777.43147605984
+Texas,Retail Trade,2022,516806.602426838
+Texas,Transportation and Warehousing,2007,126539.44755371007
+Texas,Transportation and Warehousing,2008,131712.3103850642
+Texas,Transportation and Warehousing,2009,124446.60515431117
+Texas,Transportation and Warehousing,2010,133610.9225942762
+Texas,Transportation and Warehousing,2011,134891.52031790797
+Texas,Transportation and Warehousing,2012,145769.54450161997
+Texas,Transportation and Warehousing,2013,150634.85461441215
+Texas,Transportation and Warehousing,2014,162144.53336542513
+Texas,Transportation and Warehousing,2015,177143.0134822587
+Texas,Transportation and Warehousing,2016,179331.85152256055
+Texas,Transportation and Warehousing,2017,190838.2620445923
+Texas,Transportation and Warehousing,2018,206255.69131832797
+Texas,Transportation and Warehousing,2019,215778.2006245121
+Texas,Transportation and Warehousing,2020,165897.20145550775
+Texas,Transportation and Warehousing,2021,236074.94293936685
+Texas,Transportation and Warehousing,2022,293725.9582594462
+Texas,Utilities,2007,74143.4664246824
+Texas,Utilities,2008,79295.44507293838
+Texas,Utilities,2009,84078.29638273046
+Texas,Utilities,2010,92817.72885283893
+Texas,Utilities,2011,99846.02698650675
+Texas,Utilities,2012,91805.01062860613
+Texas,Utilities,2013,93993.3163409799
+Texas,Utilities,2014,100564.11647159579
+Texas,Utilities,2015,95310.101010101
+Texas,Utilities,2016,95628.4981476204
+Texas,Utilities,2017,107443.3287482806
+Texas,Utilities,2018,108658.95564289724
+Texas,Utilities,2019,106346.69615703622
+Texas,Utilities,2020,99456.15251299828
+Texas,Utilities,2021,128628.54018589394
+Texas,Utilities,2022,160160.69158403255
+Texas,Wholesale Trade,2007,244923.07572815535
+Texas,Wholesale Trade,2008,259917.01323251415
+Texas,Wholesale Trade,2009,243300.45673476165
+Texas,Wholesale Trade,2010,245374.1521849165
+Texas,Wholesale Trade,2011,260937.81037377397
+Texas,Wholesale Trade,2012,273163.71115173673
+Texas,Wholesale Trade,2013,301703.0556503926
+Texas,Wholesale Trade,2014,321493.79201593495
+Texas,Wholesale Trade,2015,334669.8727015559
+Texas,Wholesale Trade,2016,334565.85468290636
+Texas,Wholesale Trade,2017,352962.73113985587
+Texas,Wholesale Trade,2018,357133.04225103644
+Texas,Wholesale Trade,2019,388919.6930083495
+Texas,Wholesale Trade,2020,336551.23926380364
+Texas,Wholesale Trade,2021,400446.79155041854
+Texas,Wholesale Trade,2022,512340.96492090006

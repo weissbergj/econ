@@ -1,0 +1,334 @@
+---
+title: "Economic Analysis Results"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{longtable}
+  - \usepackage{float}
+  - \usepackage{unicode-math}
+  - \usepackage{geometry}
+  - \usepackage{caption}
+  - \usepackage{lscape}
+  - \usepackage{tabularray}
+  - \usepackage{graphicx}
+  - \usepackage{codehigh}
+  - \usepackage[normalem]{ulem}
+  - \geometry{margin=1in}
+  - \captionsetup{width=0.9\textwidth, font=small}
+  - \renewcommand{\arraystretch}{1.2}
+  - \UseTblrLibrary{booktabs}
+  - \UseTblrLibrary{siunitx}
+  - \usepackage{threeparttable}
+---
+
+# Summary Statistics
+```{r, echo=FALSE}
+options(knitr.kable.NA = "")
+knitr::kable(state_summary,
+  format = "latex",
+  booktabs = TRUE,
+  longtable = TRUE,
+  digits = 2,
+  caption = "State Summary Statistics",
+  col.names = c("State", "Avg Employment", "Avg Wage", "N Industries", "Wage Inequality"),
+  align = c("l", rep("r", 4)))
+```
+
+\newpage
+# Regression Models
+
+## COVID Impact Models
+1. Employment COVID Impact:
+   \[ \log(Employment_{ist}) = \beta_0 + \beta_1 COVID_t + \alpha_s + \gamma_i + \epsilon_{ist} \]
+   - Shows how employment levels changed during COVID (2020 onwards)
+
+2. Wage COVID Impact:
+   \[ \log(Wage_{ist}) = \beta_0 + \beta_1 COVID_t + \alpha_s + \gamma_i + \epsilon_{ist} \]
+   - Shows how wages changed during COVID (2020 onwards)
+
+3. Industry Share and Wages:
+   \[ \log(Wage_{ist}) = \beta_0 + \beta_1 Share_{ist} + \alpha_s + \gamma_i + \delta_t + \epsilon_{ist} \]
+   - Tests if industries with larger employment shares pay higher wages
+
+4. Wage Premium Persistence:
+   \[ Premium_{ist} = \beta_0 + \beta_1 Premium_{is,t-1} + \alpha_s + \gamma_i + \epsilon_{ist} \]
+   - Examines if industries that paid above-average wages continue to do so
+
+5. Industry Size and Growth:
+   \[ \Delta Employment_{ist} = \beta_0 + \beta_1 \Delta Employment_{is,t-1} + \beta_2 \log(Size_{ist}) + \alpha_s + \gamma_i + \delta_t + \epsilon_{ist} \]
+   - Tests if larger industries have different employment growth patterns
+
+6. Employment Concentration and Inequality:
+   \[ \log(WageRatio_{st}) = \beta_0 + \beta_1 \log(Concentration_{st}) + \beta_2 \log(TotalEmp_{st}) + \alpha_s + \delta_t + \epsilon_{st} \]
+   - Examines if states with more concentrated employment have higher wage inequality
+
+## Long-term Growth Models
+7. Employment Trends:
+   \[ \log(Employment_{ist}) = \beta_0 + \beta_1 (Year_t - 2007) + \alpha_s + \gamma_i + \epsilon_{ist} \]
+   - Shows long-term employment growth trends since 2007
+
+8. Wage Trends:
+   \[ \log(Wage_{ist}) = \beta_0 + \beta_1 (Year_t - 2007) + \alpha_s + \gamma_i + \epsilon_{ist} \]
+   - Shows long-term wage growth trends since 2007
+
+## Financial Crisis Models
+9. Crisis Employment Impact:
+   \[ \log(Employment_{ist}) = \beta_0 + \beta_1 PostCrisis_t + \alpha_s + \gamma_i + \epsilon_{ist} \]
+   - Shows employment changes after 2008-09 financial crisis
+
+10. Crisis Wage Impact:
+    \[ \log(Wage_{ist}) = \beta_0 + \beta_1 PostCrisis_t + \alpha_s + \gamma_i + \epsilon_{ist} \]
+    - Shows wage changes after 2008-09 financial crisis
+
+## Industry Structure Models
+11. Industry Concentration Trends:
+    \[ Share_{ist} = \beta_0 + \beta_1 (Year_t - 2007) + \alpha_s + \gamma_i + \epsilon_{ist} \]
+    - Shows if industries are becoming more or less concentrated
+
+12. Wage Inequality Trends:
+    \[ \log(WageRatio_{st}) = \beta_0 + \beta_1 (Year_t - 2007) + \beta_2 \log(TotalEmp_{st}) + \alpha_s + \epsilon_{st} \]
+    - Shows if wage inequality within states is changing over time
+
+13. Size-Premium Relationship:
+    \[ Premium_{ist} = \beta_0 + \beta_1 \log(Size_{ist}) + \beta_2 (Year_t - 2007) + \beta_3 [\log(Size_{ist}) \times (Year_t - 2007)] + \alpha_s + \gamma_i + \epsilon_{ist} \]
+    - Tests if larger industries wage premiums evolve differently
+
+## Productivity Models (Four-State Analysis: CA, NY, MI, TX)
+14. Long-term Productivity Trends:
+    \[ \log(Productivity_{st}) = \beta_0 + \beta_1 (Year_t - 2007) + \alpha_s + \epsilon_{st} \]
+    - Shows long-term productivity growth trends since 2007 for major states
+    - Captures state-specific productivity trajectories
+
+15. COVID Impact on Productivity:
+    \[ \log(Productivity_{st}) = \beta_0 + \beta_1 COVID_t + \alpha_s + \epsilon_{st} \]
+    - Shows productivity changes during COVID period across major states
+    - Identifies differential impacts across the four largest state economies
+
+16. Productivity Growth Dynamics:
+    \[ \Delta Productivity_{st} = \beta_0 + \beta_1 \Delta Productivity_{s,t-1} + \beta_2 \log(Productivity_{st}) + \alpha_s + \epsilon_{st} \]
+    - Tests for persistence in productivity growth in major state economies
+    - Examines convergence patterns across states
+
+17. Industry Structure and Productivity:
+    \[ \log(Productivity_{st}) = \beta_0 + \beta_1 \log(Concentration_{st}) + \beta_2 \log(Wage_{st}) + \alpha_s + \delta_t + \epsilon_{st} \]
+    - Examines if industry concentration affects productivity in major states
+    - Controls for wage levels and state-specific factors
+
+18. Wage Bill Determinants (Four-State Analysis):
+    \[ \Delta WageBill_{st} = \beta_0 + \beta_1 Productivity_{st} + \beta_2 Employment_{ist} + \beta_3 ValueAdded_{ist} + \beta_4 \Delta Employment_{st} + \alpha_s + \delta_t + \epsilon_{ist} \]
+    - Examines determinants of changes in state-level wage bills
+    - Tests relationships between productivity, employment levels, employment growth, and value added
+    - Includes average employment changes across industries
+    - Focuses on the four major state economies
+
+Where:
+- \(\alpha_s\) represents state fixed effects
+- \(\gamma_i\) represents industry fixed effects
+- \(\delta_t\) represents year fixed effects
+- \(\epsilon_{ist}\) is the error term
+- Subscripts: i = industry, s = state, t = year
+
+# Regression Results
+
+```{r, echo=FALSE}
+options("modelsummary_format_numeric_latex" = "plain")
+modelsummary(models_covid,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "covid_period" = "COVID Period",
+    "industry_share" = "Industry Share"
+  ),
+  title = "COVID Impact Results",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex")
+```
+
+```{r, echo=FALSE}
+modelsummary(models_industry,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "lag_premium" = "Lagged Premium",
+    "lag_pct_change" = "Lagged % Change",
+    "industry_size" = "Industry Size",
+    "log(employment_concentration)" = "Log Emp Concentration",
+    "log(total_employment)" = "Log Total Employment"
+  ),
+  title = "Industry Structure Results",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(models_trends1,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "year_trend" = "Year Trend",
+    "post_crisis" = "Post-Crisis Period"
+  ),
+  title = "Long-term Growth Results",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+\newpage
+```{r, echo=FALSE}
+modelsummary(models_trends2,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "year_trend" = "Year Trend",
+    "industry_size" = "Industry Size",
+    "industry_size:year_trend" = "Industry Size × Year Trend",
+    "log(total_employment)" = "Log Total Employment"
+  ),
+  title = "Industry Evolution Results",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(reg_prod_trend,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "year_trend" = "Year Trend"
+  ),
+  title = "Productivity Trends",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(reg_prod_covid,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "covid_period" = "COVID Period"
+  ),
+  title = "COVID Productivity Impact",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(reg_prod_growth,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "lag(pct_change)" = "Lagged % Change",
+    "log(labor_productivity)" = "Log Labor Productivity"
+  ),
+  title = "Productivity Growth Determinants",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(reg_prod_composition,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "log(employment_concentration)" = "Log Emp Concentration",
+    "log(avg_wage)" = "Log Avg Wage"
+  ),
+  title = "Industry Composition Effect on Productivity",
+  notes = list("Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(reg_wage_bill,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "log_productivity" = "Log Productivity",
+    "log_employment" = "Log Employment",
+    "log_value_added" = "Log Value Added",
+    "avg_emp_change" = "Avg Employment Change"
+  ),
+  title = "Wage Bill Determinants (Four Major States)",
+  notes = list(
+    "Analysis covers California, New York, Michigan, and Texas",
+    "Dependent variable: % Change in State Wage Bill",
+    "Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"
+  ),
+  output = "latex",
+  float = FALSE)
+```
+
+```{r, echo=FALSE}
+modelsummary(models_productivity,
+  stars = TRUE,
+  gof_map = c("nobs", "r.squared"),
+  fmt = "%.3f",
+  estimate = "{estimate}{stars}",
+  statistic = "({std.error})",
+  coef_map = c(
+    "year_trend" = "Year Trend",
+    "covid_period" = "COVID Period",
+    "lag(pct_change)" = "Lagged % Change",
+    "log(labor_productivity)" = "Log Productivity",
+    "log(employment_concentration)" = "Log Emp Concentration",
+    "log(avg_wage)" = "Log Average Wage",
+    "log_productivity" = "Log Productivity",
+    "log_employment" = "Log Employment",
+    "log_value_added" = "Log Value Added"
+  ),
+  title = "Productivity Analysis Results (Four Major States)",
+  notes = list(
+    "Analysis covers California, New York, Michigan, and Texas",
+    "Significance levels: * p<0.1, ** p<0.05, *** p<0.01",
+    "Standard errors in parentheses"
+  ),
+  output = "latex",
+  float = FALSE)
+```
