@@ -1,3 +1,14 @@
+# find . -type f -exec ls -lh {} + | sort -k5 -rh | awk '{ print $5, $9 }' | head -n 50
+# .dat is 6.5 GB
 data/industry_wage_employment/usa_00003.dat.gz
 data/industry_wage_employment/industry_wage_employment.dat
 data/labor_productivity/productivity.xlsx
+
+# Around 500 MB
+/data/broadband/F477_2017_12_Aggregated_by_State_ALL_US.csv
+/data/broadband/F477_2018_12_Aggregated_by_State_ALL_US.csv
+/data/broadband/F477_2016_12_Aggregated_by_State_ALL_US.csv
+/data/broadband/F477_2020_12_Aggregated_by_State_ALL_US.csv
+/data/broadband/F477_2021_06_Aggregated_by_State_ALL_US.csv
+/data/broadband/F477_2019_12_Aggregated_by_State_ALL_US.csv
+/data/broadband/F477_2015_12_Aggregated_by_State_ALL_US.csv
