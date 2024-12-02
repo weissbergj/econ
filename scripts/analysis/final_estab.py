@@ -242,7 +242,7 @@ def main():
     # Load and prepare data
     state_industry, industry_dummies = load_and_prepare_data()
     
-    Run all sections
+    # Run all sections
     section_one_results = run_section_one(state_industry, industry_dummies)
     print_section_one(section_one_results)
     
