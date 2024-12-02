@@ -242,29 +242,29 @@ def main():
     # Load and prepare data
     state_industry, industry_dummies = load_and_prepare_data()
     
-    # Run all sections
-    # section_one_results = run_section_one(state_industry, industry_dummies)
-    # print_section_one(section_one_results)
+    Run all sections
+    section_one_results = run_section_one(state_industry, industry_dummies)
+    print_section_one(section_one_results)
     
-    # section_two_results = run_section_two(state_industry)
-    # print_section_two(section_two_results)
+    section_two_results = run_section_two(state_industry)
+    print_section_two(section_two_results)
     
-    # section_three_results = run_section_three(state_industry)
-    # print_section_three(section_three_results)
+    section_three_results = run_section_three(state_industry)
+    print_section_three(section_three_results)
     
     section_four_results = run_section_four(state_industry)
     print_section_four(section_four_results)
     
-    # section_five_results = run_section_five(state_industry)
-    # print_section_five_results(section_five_results)
+    section_five_results = run_section_five(state_industry)
+    print_section_five_results(section_five_results)
     
     # Store all results in a dictionary
     all_results = {
-        # 'section_one': section_one_results,
-        # 'section_two': section_two_results,
-        # 'section_three': section_three_results,
+        'section_one': section_one_results,
+        'section_two': section_two_results,
+        'section_three': section_three_results,
         'section_four': section_four_results,
-        # 'section_five': section_five_results
+        'section_five': section_five_results
     }
     
     return all_results

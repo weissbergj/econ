@@ -1003,6 +1003,8 @@ def run_diff_in_diff(df):
     
     return results
 
+
+
 def examine_industries(df):
     """Print all industries and their sample sizes"""
     industry_counts = df['industry_name'].value_counts()
