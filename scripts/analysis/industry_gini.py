@@ -1358,70 +1358,249 @@ def analyze_digital_transformation_robust(df):
     
     return results
 
+# def analyze_digital_transformation(df):
+#     """
+#     Run triple-difference analysis of digital transformation's effect on size-inequality relationship
+#     """
+#     # Define digital industries
+#     digital_industries = [
+#         'Information',
+#         'Finance and Insurance',
+#         'Professional, Scientific, and Technical Services'
+#     ]
+    
+#     # Create key variables
+#     df['digital'] = df['industry_name'].isin(digital_industries).astype(int)
+#     df['post_2015'] = (df['YEAR'] >= 2015).astype(int)
+    
+#     # Create interactions
+#     df['size_x_digital'] = df['workers'] * df['digital']
+#     df['size_x_post2015'] = df['workers'] * df['post_2015']
+#     df['digital_x_post2015'] = df['digital'] * df['post_2015']
+#     df['size_x_digital_x_post2015'] = df['workers'] * df['digital'] * df['post_2015']
+    
+#     # Run triple-diff regression
+#     panel_data = df.set_index(['state_industry', 'YEAR'])
+#     model = PanelOLS(
+#         dependent=panel_data['wage_inequality'],
+#         exog=sm.add_constant(panel_data[[
+#             'workers',
+#             'size_x_digital',
+#             'size_x_post2015',
+#             'digital_x_post2015',
+#             'size_x_digital_x_post2015'
+#         ]]),
+#         entity_effects=True,
+#         time_effects=True,
+#         drop_absorbed=True
+#     )
+    
+#     results = model.fit(cov_type='clustered', cluster_entity=True)
+    
+#     # Add parallel trends test
+#     pre_2015 = df[df['YEAR'] < 2015].copy()
+#     pre_2015['event_time'] = pre_2015['YEAR'] - 2015
+    
+#     # Create event-time interactions
+#     for year in range(-5, 0):  # 2010-2014
+#         pre_2015[f'digital_x_t{year}'] = (pre_2015['event_time'] == year) * pre_2015['digital']
+#         pre_2015[f'size_x_digital_x_t{year}'] = pre_2015['workers'] * pre_2015[f'digital_x_t{year}']
+    
+#     # Run parallel trends regression
+#     panel_pre = pre_2015.set_index(['state_industry', 'YEAR'])
+#     trend_vars = ([f'size_x_digital_x_t{t}' for t in range(-5, 0)] + 
+#                  [f'digital_x_t{t}' for t in range(-5, 0)])
+    
+#     trend_model = PanelOLS(
+#         dependent=panel_pre['wage_inequality'],
+#         exog=sm.add_constant(panel_pre[['workers'] + trend_vars]),
+#         entity_effects=True,
+#         time_effects=True,
+#         drop_absorbed=True
+#     )
+    
+#     trend_results = trend_model.fit(cov_type='clustered', cluster_entity=True)
+    
+#     return results, trend_results
+
+# def analyze_digital_transformation(df): #THIS ONE HAS DIGITAL INTENSITY FROM BROOKINGS
+#     """
+#     Triple-difference analysis using a continuous 'digital_intensity' measure
+#     to see how post-2015 wage inequality changes with size * digital intensity.
+
+#     Y = wage_inequality
+#     DDD variables:
+#       - log_workers (continuous establishment/industry size)
+#       - digital_intensity (continuous measure, e.g. from 0 to ~55 in 2016)
+#       - post_2015 (1 if year >= 2015, else 0)
+#     Interaction: log_workers * digital_intensity * post_2015
+#     """
+#     import numpy as np
+#     import statsmodels.api as sm
+#     from linearmodels.panel import PanelOLS
+
+#     # 1) Create the post-2015 dummy
+#     df['post_2015'] = (df['YEAR'] >= 2015).astype(int)
+
+#     # 2) (Optional) Log-transform workers if you want size effects to be non-linear
+#     df['log_workers'] = np.log(df['workers'] + 1)
+
+#     # 3) Create interaction terms:
+#     #    (a) digital_intensity * post_2015
+#     #    (b) log_workers * digital_intensity * post_2015
+#     df['intensity_x_post'] = df['digital_intensity'] * df['post_2015']
+#     df['size_x_intensity_x_post'] = df['log_workers'] * df['digital_intensity'] * df['post_2015']
+
+#     # 4) Convert to panel
+#     panel_data = df.set_index(['state_industry', 'YEAR'])
+
+#     # 5) Build the regressors for the triple-diff
+#     exog_vars = [
+#         'log_workers',            # main effect of size
+#         'digital_intensity',      # main effect of continuous digital
+#         'post_2015',             # main effect of post-2015
+#         'intensity_x_post',      # digital_intensity * post2015
+#         'size_x_intensity_x_post'# triple interaction: size * digital_intensity * post2015
+#     ]
+
+#     # 6) Fit the model with entity & time fixed effects
+#     model = PanelOLS(
+#         dependent=panel_data['wage_inequality'],
+#         exog=sm.add_constant(panel_data[exog_vars]),
+#         entity_effects=True,
+#         time_effects=True,
+#         drop_absorbed=True
+#     )
+#     results = model.fit(cov_type='clustered', cluster_entity=True)
+
+#     # 7) Parallel Trends Check (only in pre-2015 data)
+#     pre_2015 = df[df['YEAR'] < 2015].copy()
+#     pre_2015['event_time'] = pre_2015['YEAR'] - 2015
+
+#     # For each year in 2010–2014, create dummies and interact with digital_intensity
+#     import math
+#     for year in range(-5, 0):  # i.e. 2010 to 2014 if 2015 is time zero
+#         pre_2015[f'intensity_x_t{year}'] = ((pre_2015['event_time'] == year).astype(int)
+#                                            * pre_2015['digital_intensity'])
+#         # Optionally also incorporate size if you want a full triple:
+#         pre_2015[f'size_x_intensity_x_t{year}'] = pre_2015['log_workers'] * pre_2015[f'intensity_x_t{year}']
+
+#     panel_pre = pre_2015.set_index(['state_industry', 'YEAR'])
+#     t_vars = ([f'intensity_x_t{t}' for t in range(-5,0)]
+#              + [f'size_x_intensity_x_t{t}' for t in range(-5,0)])
+
+#     trend_model = PanelOLS(
+#         dependent=panel_pre['wage_inequality'],
+#         exog=sm.add_constant(panel_pre[['log_workers'] + t_vars]),
+#         entity_effects=True,
+#         time_effects=True,
+#         drop_absorbed=True
+#     )
+#     trend_results = trend_model.fit(cov_type='clustered', cluster_entity=True)
+
+#     # Return both the main triple-diff and the parallel trends test
+#     return results, trend_results
+
+
 def analyze_digital_transformation(df):
     """
-    Run triple-difference analysis of digital transformation's effect on size-inequality relationship
+    Runs a triple-difference using a continuous 'digital_intensity' measure,
+    which is linearly interpolated from 2002->2016 for each row's YEAR.
+    
+    Required columns in df:
+      - "Mean digital score (2002)" and "(2016)"
+      - 'YEAR', 'workers', 'wage_inequality'
+      - 'state_industry' (for panel index)
+    
+    Steps:
+      1) Interpolate df['digital_intensity'] from 2002->2016, clamp outside that range
+      2) post_2015 = 1 if YEAR >= 2015
+      3) log_workers = log(workers + 1)
+      4) triple difference: wage_inequality ~ log_workers + digital_intensity + post_2015
+         + digital_intensity*post_2015 + log_workers*digital_intensity*post_2015
+         with entity/time FEs
+      5) Parallel trends check (pre-2015)
+    
+    Prints:
+      - Main triple-diff results
+      - Parallel-trends results
+    Returns:
+      (main_results, parallel_trends_results)
     """
-    # Define digital industries
-    digital_industries = [
-        'Information',
-        'Finance and Insurance',
-        'Professional, Scientific, and Technical Services'
+
+    # 1) Interpolate
+    def interpolate_digital_score(row):
+        y = row['YEAR']
+        dig02 = row['Mean digital score (2002)']
+        dig16 = row['Mean digital score (2016)']
+        if y <= 2002:
+            return dig02
+        elif y >= 2016:
+            return dig16
+        else:
+            frac = (y - 2002) / float(2016 - 2002)  # 14
+            return dig02 + frac*(dig16 - dig02)
+    
+    df['digital_intensity'] = df.apply(interpolate_digital_score, axis=1)
+    
+    # 2) post_2015 dummy, log of size
+    df['post_2015'] = (df['YEAR'] >= 2015).astype(int)
+    df['log_workers'] = np.log(df['workers'] + 1)
+    
+    # 3) Create interactions
+    df['intensity_x_post'] = df['digital_intensity'] * df['post_2015']
+    df['size_x_intensity_x_post'] = df['log_workers'] * df['digital_intensity'] * df['post_2015']
+
+    # 4) Prepare panel data
+    panel_data = df.set_index(['state_industry', 'YEAR'])
+    exog_vars = [
+        'log_workers',
+        'digital_intensity',
+        'post_2015',
+        'intensity_x_post',
+        'size_x_intensity_x_post'
     ]
     
-    # Create key variables
-    df['digital'] = df['industry_name'].isin(digital_industries).astype(int)
-    df['post_2015'] = (df['YEAR'] >= 2015).astype(int)
-    
-    # Create interactions
-    df['size_x_digital'] = df['workers'] * df['digital']
-    df['size_x_post2015'] = df['workers'] * df['post_2015']
-    df['digital_x_post2015'] = df['digital'] * df['post_2015']
-    df['size_x_digital_x_post2015'] = df['workers'] * df['digital'] * df['post_2015']
-    
-    # Run triple-diff regression
-    panel_data = df.set_index(['state_industry', 'YEAR'])
+    # Main triple-diff regression
     model = PanelOLS(
         dependent=panel_data['wage_inequality'],
-        exog=sm.add_constant(panel_data[[
-            'workers',
-            'size_x_digital',
-            'size_x_post2015',
-            'digital_x_post2015',
-            'size_x_digital_x_post2015'
-        ]]),
+        exog=sm.add_constant(panel_data[exog_vars]),
         entity_effects=True,
         time_effects=True,
         drop_absorbed=True
     )
+    main_results = model.fit(cov_type='clustered', cluster_entity=True)
     
-    results = model.fit(cov_type='clustered', cluster_entity=True)
+    print("\n=== Triple-Diff (Continuous Digital) ===")
+    print(main_results.summary.tables[1])
     
-    # Add parallel trends test
-    pre_2015 = df[df['YEAR'] < 2015].copy()
-    pre_2015['event_time'] = pre_2015['YEAR'] - 2015
+    # 5) Parallel trends (pre-2015 only)
+    pre_df = df[df['YEAR'] < 2015].copy()
+    pre_df['event_time'] = pre_df['YEAR'] - 2015
     
-    # Create event-time interactions
-    for year in range(-5, 0):  # 2010-2014
-        pre_2015[f'digital_x_t{year}'] = (pre_2015['event_time'] == year) * pre_2015['digital']
-        pre_2015[f'size_x_digital_x_t{year}'] = pre_2015['workers'] * pre_2015[f'digital_x_t{year}']
-    
-    # Run parallel trends regression
-    panel_pre = pre_2015.set_index(['state_industry', 'YEAR'])
-    trend_vars = ([f'size_x_digital_x_t{t}' for t in range(-5, 0)] + 
-                 [f'digital_x_t{t}' for t in range(-5, 0)])
+    for yr in range(-5, 0):
+        pre_df[f'intensity_x_t{yr}'] = ((pre_df['event_time'] == yr).astype(int)
+                                       * pre_df['digital_intensity'])
+        pre_df[f'size_x_intensity_x_t{yr}'] = pre_df['log_workers'] * pre_df[f'intensity_x_t{yr}']
+
+    pre_panel = pre_df.set_index(['state_industry', 'YEAR'])
+    t_vars = [f'intensity_x_t{t}' for t in range(-5,0)] \
+           + [f'size_x_intensity_x_t{t}' for t in range(-5,0)]
     
     trend_model = PanelOLS(
-        dependent=panel_pre['wage_inequality'],
-        exog=sm.add_constant(panel_pre[['workers'] + trend_vars]),
+        dependent=pre_panel['wage_inequality'],
+        exog=sm.add_constant(pre_panel[['log_workers'] + t_vars]),
         entity_effects=True,
         time_effects=True,
         drop_absorbed=True
     )
+    parallel_results = trend_model.fit(cov_type='clustered', cluster_entity=True)
     
-    trend_results = trend_model.fit(cov_type='clustered', cluster_entity=True)
+    print("\n=== Parallel Trends Check (Pre-2015) ===")
+    print(parallel_results.summary.tables[1])
     
-    return results, trend_results
+    return main_results, parallel_results
+
 
 def plot_digital_transformation_effect(df, results):
     """
@@ -1461,6 +1640,80 @@ def plot_digital_transformation_effect(df, results):
     plt.tight_layout()
     plt.savefig('digital_transformation_effect.png', bbox_inches='tight', dpi=300)
     plt.close()
+
+
+
+def classify_digital_and_size(df):
+    """
+    Adds two columns to the DataFrame:
+      - 'digital': 1 if industry is in your digital list, else 0
+      - 'size': 'large' if above the median # of workers, else 'small'
+    """
+    # Example definition of "digital" industries
+    digital_industries = [
+        'Information',
+        'Finance and Insurance',
+        'Professional, Scientific, and Technical Services'
+    ]
+    df['digital'] = df['industry_name'].isin(digital_industries).astype(int)
+
+    # For "size," use the median # of workers as cutoff:
+    cutoff = df['workers'].median()
+    df['size'] = np.where(df['workers'] > cutoff, 'large', 'small')
+    
+    return df
+
+
+def plot_four_line_chart(df):
+    """
+    Plots wage_inequality over time for four groups:
+      - non-digital, small
+      - non-digital, large
+      - digital, small
+      - digital, large
+    Assumes df has columns:
+      - YEAR
+      - wage_inequality
+      - digital (0 or 1)
+      - size ('small' or 'large')
+    """
+    # 1) Group by (YEAR, digital, size) => mean wage_inequality
+    grouped = df.groupby(['YEAR', 'digital', 'size'], as_index=False)['wage_inequality'].mean()
+
+    # 2) Prepare figure
+    plt.figure(figsize=(9,6))
+
+    # We'll define subgroups
+    combos = [
+        (0, 'small',  'Non-Digital, Small', 'blue',  '-'),
+        (0, 'large',  'Non-Digital, Large', 'blue',  '--'),
+        (1, 'small',  'Digital, Small',     'red',   '-'),
+        (1, 'large',  'Digital, Large',     'red',   '--')
+    ]
+
+    # 3) Plot lines
+    for (dig_val, size_val, label, color, lstyle) in combos:
+        # Subset data
+        subset = grouped[(grouped['digital'] == dig_val) & (grouped['size'] == size_val)].copy()
+        subset.sort_values('YEAR', inplace=True)
+
+        plt.plot(subset['YEAR'], subset['wage_inequality'],
+                 color=color, linestyle=lstyle, label=label)
+
+    # 4) Mark 2015
+    plt.axvline(2015, color='gray', linestyle='--', alpha=0.7)
+    plt.text(2015.2, plt.gca().get_ylim()[0], "2015 Break", rotation=90, color='gray', alpha=0.7)
+
+    # 5) Final touches
+    plt.title("Wage Inequality Over Time\n(Digital vs. Non-Digital, Small vs. Large)")
+    plt.xlabel("Year")
+    plt.ylabel("Mean Wage Inequality")
+    plt.legend()
+    plt.grid(alpha=0.2)
+    plt.tight_layout()
+    plt.show()
+
+
 
 def plot_event_study_results(df):
     """Create clean event study plot showing actual wage inequality"""
@@ -1649,6 +1902,13 @@ def analyze_heterogeneity(df):
     df['post_2015'] = (df['YEAR'] >= 2015).astype(int)
     df['wage_level'] = pd.qcut(df['mean_wage'], q=4, labels=['Low', 'Mid-Low', 'Mid-High', 'High'])
     
+    digital_industries = [
+        'Information',
+        'Professional, Scientific, and Technical Services',
+        'Finance and Insurance'
+    ]
+    df['digital'] = df['industry_name'].isin(digital_industries).astype(int)
+
     # Create interaction features
     df['size_x_digital'] = df['workers'] * df['digital']
     df['size_x_post2015'] = df['workers'] * df['post_2015']
